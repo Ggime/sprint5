@@ -18,6 +18,7 @@
               <a href="/faq" class="fijo">AYUDA</a>
               <a href="/login" class="fijo">INGRESAR</a>
               <a href="/registro" class="movil">REGISTRARSE</a>
+              <a href="/actividades/listar" class="movil">OPCIONES</a>
               <div class="act-contenedor">
                 <label class="ul-label" for="ul">ACTIVIDADES<a href="#" class="actividades"></a></label>
                  <input type="checkbox" class="dar-klik" id="ul">
@@ -27,7 +28,7 @@
                      <li>Elegir Fecha</li>
                      <li>Juego en Equipo</li>
                      <li>Indoor</li>
-                     <li>Suma tu actividad</li>
+                      <a href="/actividades/agregar">Suma tu Actividad</a>
                    </ul>
               </div>
               <div class="act-contenedor">
@@ -39,7 +40,7 @@
                      <li>Elegir Fecha</li>
                      <li>Juego en Equipo</li>
                      <li>Indoor</li>
-                     <li>Suma tu actividad</li>
+                    <a href="/actividades/agregar">Suma tu Actividad</a>
                    </ul>
               </div>
           </div>
@@ -53,7 +54,7 @@
               <a href="#">Juego en Equipo</a>
               <a href="#">Aire libre</a>
               <a href="#">Indoor</a>
-              <a href="#">Suma tu actividad</a>
+              <a href="/actividades/agregar">Suma tu actividad</a>
             </div>
           </nav>
        </div>

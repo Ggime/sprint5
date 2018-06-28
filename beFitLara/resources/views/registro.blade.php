@@ -1,6 +1,6 @@
 @extends ('plantillas.primera')
 
-@section ('registro')
+@section ('contenido')
 
 <section class="iniciar">
   <div class="ingresar">

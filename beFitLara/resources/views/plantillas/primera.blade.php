@@ -10,10 +10,6 @@
     @include('plantillas.header')
 
     @yield('contenido')
-    @yield('registro')
-    @yield('login')
-    @yield('faq')
-
 
     @include('plantillas.footer')
 

@@ -305,6 +305,11 @@ section .ingresar{
   margin-left: 0px;
 }
 
+.descripcion{
+  width: 200%;
+  margin-left: 0px;
+}
+
 /*.nombre1{
   display: none;
 }

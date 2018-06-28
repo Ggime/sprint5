@@ -1,6 +1,6 @@
 @extends ('plantillas.primera')
 
-@section ('faq')
+@section ('contenido')
 
 <div class="cabeza">
       <h2><a id="top">Preguntas Frecuentes</a></h2>
