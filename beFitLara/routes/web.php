@@ -19,8 +19,10 @@ Route::get('/faq', 'MiControlador@faq');
 
 Route::get('/', 'MiControlador@index');
 
+Route::get('actividades/agregar', 'ActiControlador@agregar');
+Route::post('actividades/guardar', 'ActiControlador@guardar');
+
 Route::get('actividades/listar', 'ActiControlador@listar');
 
-Route::get('/agregar', 'ActiControlador@agregar');
-
-Route::get('actividades/agregar', 'ActiControlador@agregar');
+Route::get('actividades/{id}', 'ActiControlador@editar');
+Route::post('actividades/{id}', 'ActiControlador@actualizar');

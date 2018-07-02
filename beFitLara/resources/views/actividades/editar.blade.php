@@ -50,7 +50,7 @@
           <input type="text" id="" name="dia" placeholder="*Dia" value="{{ old("dia") }}">
             </label>
             <label for="">
-          <input type="text" id="" name="dictado" placeholder="*Dictado por" value="{{ old("dictado") }}">
+          <input type="text" id="" name="responsable" placeholder="*Responsable" value="{{ old("responsable") }}">
             </label>
           </div>
           <div class="mensajes">
@@ -100,7 +100,7 @@
   <div class="descripcion">
             <input type="textarea" id="" name="descripcion" placeholder="*Descripción" value={{ old("descripcion") }}>
           </div>
-          <input type="submit" value="AGREGAR!">
+          <input type="submit" value="GUARDAR CAMBIOS!">
         </form>
     </div>
 
