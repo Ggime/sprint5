@@ -4,7 +4,7 @@
 
   <section class="iniciar">
     <div class="ingresar">
-        <form action='' method="post" enctype="multipart/form-data">
+        <form action='/actividades/guardar' method="post" enctype="multipart/form-data">
           {{ csrf_field() }}
         @if (count($errors)>0)
           <div class="alert alert-danger">
@@ -19,21 +19,21 @@
           <br>
           <div class="nombre">
             <label for="">
-              <input type="text" id="" name="nombre" placeholder="*Actividad" value="{{ old("nombre") }}">
+              <input type="text" id="" name="actividad" placeholder="*Actividad" value="{{ old("actividad") }}">
             </label>
             <label for="">
-          <input type="text" id="" name="id_categoria" placeholder="*Categoria" value="{{ old("id_categoria") }}">
+          <input type="text" id="" name="id_categorias" placeholder="*Categoria" value="{{ old("id_categorias") }}">
             </label>
           </div>
           <div class="mensajes">
               <ul>
-                <li><?= isset($errores['nombre'])? $errores['nombre'] : ''; ?></li>
+                <li> {{ $errors->has('actividad')? $errors->actividad : ''}} </li>
                 <li><?= isset($errores['apellido'])? $errores['apellido'] : ''; ?></li>
              </ul>
           </div>
           <div class="nombre">
             <label for="">
-              <input type="text" id="" name="id_barrio" placeholder="*Barrio" value="{{ old("id_barrio") }}">
+              <input type="text" id="" name="id_barrios" placeholder="*Barrio" value="{{ old("id_barrios") }}">
             </label>
             <label for="">
           <input type="text" id="" name="direccion" placeholder="*Dirección" value="{{ old("direccion") }}">
@@ -50,7 +50,7 @@
           <input type="text" id="" name="dia" placeholder="*Dia" value="{{ old("dia") }}">
             </label>
             <label for="">
-          <input type="text" id="" name="dictado" placeholder="*Dictado por" value="{{ old("dictado") }}">
+          <input type="text" id="" name="responsable" placeholder="*Dictado por" value="{{ old("responsable") }}">
             </label>
           </div>
           <div class="mensajes">
@@ -73,8 +73,14 @@
              </ul>
           </div>
           <div class="nombre">
-            <label for="">
-              <input type="text" id="" name="formato" placeholder="*Formato" value={{ old("formato") }}>
+            <label for="id_formatos">
+              <select class="form-control" id="id_formatos" name="id_formatos">
+                <option value="">Formato</option>
+                @foreach ($formatos as $formi)
+                  <option value="{{$formi->id}}">{{$formi->formato}}</option>
+                @endforeach
+              </select>
+              <input type="text" id="" name="id_formatos" placeholder="*Formato" value={{ old("id_formatos") }}>
             </label>
             <label for="">
               <input type="text" id="" name="precio" placeholder="*Precio" value={{ old("precio") }}>

@@ -24,5 +24,5 @@ Route::post('actividades/guardar', 'ActiControlador@guardar');
 
 Route::get('actividades/listar', 'ActiControlador@listar');
 
-Route::get('actividades/{id}', 'ActiControlador@editar');
+ //Route::get('actividades/{id}', 'ActiControlador@editar');
 Route::post('actividades/{id}', 'ActiControlador@actualizar');

@@ -8,7 +8,7 @@
   <br>
       <ul>
         @foreach ($actividades as $acti)
-          <li>{{$acti->nombre}}</li>
+        <a href="/actividades/editar">{{$acti->actividad}} {{$acti->actividad->formato}} </a>
         @endforeach
       </ul>
 

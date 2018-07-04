@@ -6,7 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Actividad extends Model
 {
-    protected $table = 'actividad';
+    protected $table = 'actividades';
 
-    protected $guarded = '[]';
+    protected $guarded = [];
+
+    public $timestamps = false;
+
+    public function formato(){
+      return $this->belongsTo(Formato::class);
+    }
 }

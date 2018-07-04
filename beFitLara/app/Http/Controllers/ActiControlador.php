@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Actividad;
-
+use App\Formato;
 class ActiControlador extends Controller
 {
     public function listar(){
@@ -14,34 +14,35 @@ class ActiControlador extends Controller
     }
 
     public function agregar(){
+      $formatos = Formato::orderBy('formato','ASC')->get();
       return view ('actividades.agregar');
     }
 
    public function guardar(Request $request){
      $reglas = [
-       'nombre' => 'required',
-       'id_categoria' => 'required',
-       'id_barrio' => 'required',
+       'actividad' => 'required',
+       'id_categorias' => 'required',
+       'id_barrios' => 'required',
        'direccion' => 'required',
        'dia' => 'required',
-       'dictado' => 'required',
+       'responsable' => 'required',
        'horario_desde' => 'required',
        'horario_hasta' => 'required',
-       'formato' => 'required',
+       'id_formatos' => 'required',
        'descripcion' => 'required',
        'precio' => 'required',
      ];
 
      $mensajes = [
-       'nombre.required' => 'Ingresa tu nombre',
-       'id_categoria.required' => 'Ingresa la categoria',
-       'id_barrio.required' => 'Ingresa el barrio',
+       'actividad.required' => 'Ingresa tu nombre',
+       'id_categorias.required' => 'Ingresa la categoria',
+       'id_barrios.required' => 'Ingresa el barrio',
        'direccion.required' => 'Ingresa la dirección',
        'dia.required' => 'Ingresa el dia',
        'responsable.required' => 'Quien dicta la clase',
        'horario_desde.required' => 'Ingresa la hora de inicio',
        'horario_hasta.required' => 'Ingresa la hora de finalización',
-       'formato.required' => 'Indoor o Outdoor',
+       'id_formatos.required' => 'Indoor o Outdoor',
        'descripcion.required' => 'Descripción de la actividad',
        'precio.required' => 'Ingresa el precio',
 
@@ -55,13 +56,13 @@ class ActiControlador extends Controller
     echo 'Se guardo la actividad';
    }
 
-   public function editar($id){
-     $actividad = Actividad::find($id);
+  /*  public function editar($id){
+      $actividad = Actividad::find($id);
 
      return view('actividades.editar')
-     ->with('actividad';$actividad)
-     ->with('barrio';$barrio);
-   }
+     ->with('actividad',$actividad)
+     ->with('barrio',$barrios);
+   }*/
 
    public function actualizar($id, Request $request){
 //me traigo la actividad
