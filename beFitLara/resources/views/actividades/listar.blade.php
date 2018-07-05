@@ -8,9 +8,9 @@
   <br>
       <ul>
         @foreach ($actividades as $acti)
-        <a href="/actividades/editar">{{$acti->actividad}} {{$acti->actividad->formato}} </a>
+        <a href="/actividades/editar"><li>{{$acti->actividad}}</li></a>
         @endforeach
       </ul>
-
+ 
 
 @endsection

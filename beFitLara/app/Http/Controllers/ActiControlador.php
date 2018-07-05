@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Actividad;
-use App\Formato;
+use App\Barrio;
+use App\Categoria;
 class ActiControlador extends Controller
 {
     public function listar(){
@@ -14,35 +15,36 @@ class ActiControlador extends Controller
     }
 
     public function agregar(){
-      $formatos = Formato::orderBy('formato','ASC')->get();
-      return view ('actividades.agregar');
+      $barrios = Barrio::orderBy('barrio','ASC')->get();
+      $categorias = Categoria::orderBy('categoria','ASC')->get();
+      return view ('actividades.agregar')
+      ->with('barrios', $barrios)
+      ->with('categorias', $categorias);
     }
 
    public function guardar(Request $request){
      $reglas = [
        'actividad' => 'required',
-       'id_categorias' => 'required',
-       'id_barrios' => 'required',
+       'categoria_id' => 'required',
+       'barrio_id' => 'required',
        'direccion' => 'required',
-       'dia' => 'required',
+       //'dia' => 'required',
        'responsable' => 'required',
-       'horario_desde' => 'required',
-       'horario_hasta' => 'required',
-       'id_formatos' => 'required',
+       'hora' => 'required',
+       'duracion' =>'required',
        'descripcion' => 'required',
        'precio' => 'required',
      ];
 
      $mensajes = [
        'actividad.required' => 'Ingresa tu nombre',
-       'id_categorias.required' => 'Ingresa la categoria',
-       'id_barrios.required' => 'Ingresa el barrio',
+       'categoria_id.required' => 'Ingresa la categoria',
+       'barrio_id.required' => 'Ingresa el barrio',
        'direccion.required' => 'Ingresa la dirección',
-       'dia.required' => 'Ingresa el dia',
+       //'dia.required' => 'Ingresa el dia',
        'responsable.required' => 'Quien dicta la clase',
-       'horario_desde.required' => 'Ingresa la hora de inicio',
-       'horario_hasta.required' => 'Ingresa la hora de finalización',
-       'id_formatos.required' => 'Indoor o Outdoor',
+       'hora.required' => 'Ingresa la hora de inicio',
+       'duracion.required' => 'Ingresa la hora de finalización',
        'descripcion.required' => 'Descripción de la actividad',
        'precio.required' => 'Ingresa el precio',
 

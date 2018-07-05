@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Formato extends Model
+class Barrio extends Model
 {
   public function actividades(){
     return $this->hasMany(Actividad::class);

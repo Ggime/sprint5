@@ -4,7 +4,7 @@
 
   <section class="iniciar">
     <div class="ingresar">
-        <form action='/actividades/guardar' method="post" enctype="multipart/form-data">
+        <form action='/actividades/agregar' method="post" enctype="multipart/form-data">
           {{ csrf_field() }}
         @if (count($errors)>0)
           <div class="alert alert-danger">
@@ -22,7 +22,13 @@
               <input type="text" id="" name="actividad" placeholder="*Actividad" value="{{ old("actividad") }}">
             </label>
             <label for="">
-          <input type="text" id="" name="id_categorias" placeholder="*Categoria" value="{{ old("id_categorias") }}">
+              <label for="categoria_id">
+                <select id="categoria_id" name="categoria_id" class="form-control">
+                <option value="">*Categoría</option>
+                @foreach ($categorias as $categoria)
+                  <option value="{{$categoria->id}}">{{$categoria->categoria}}</option>
+                @endforeach
+                </select>
             </label>
           </div>
           <div class="mensajes">
@@ -32,8 +38,13 @@
              </ul>
           </div>
           <div class="nombre">
-            <label for="">
-              <input type="text" id="" name="id_barrios" placeholder="*Barrio" value="{{ old("id_barrios") }}">
+            <label for="barrio_id">
+              <select id="barrio_id" name="barrio_id" class="form-control">
+              <option value="">*Barrio</option>
+              @foreach ($barrios as $barrio)
+                <option value="{{$barrio->id}}">{{$barrio->barrio}}</option>
+              @endforeach
+              </select>
             </label>
             <label for="">
           <input type="text" id="" name="direccion" placeholder="*Dirección" value="{{ old("direccion") }}">
@@ -46,11 +57,34 @@
              </ul>
           </div>
           <div class="nombre">
+            <label for="1">
+              <input type="checkbox" name="1" value="lunes">Lunes
+              </label>
+              <label for="2">
+              <input type="checkbox" name="2" value="martes">Martes
+              </label>
+              <label for="3">
+              <input type="checkbox" name="3" value="miercoles">Miercoles
+              </label>
+              <label for="4">
+              <input type="checkbox" name="4" value="jueves">Jueves
+              </label>
+              <label for="5">
+              <input type="checkbox" name="5" value="viernes">Viernes
+              </label>
+              <label for="6">
+              <input type="checkbox" name="6" value="sabado">Sábado
+              </label>
+              <label for="7">
+                <input type="checkbox" name="7" value="sabado">Domingo<br>
+            </label>
+          </div>
+          <div class="nombre">
             <label for="">
-          <input type="text" id="" name="dia" placeholder="*Dia" value="{{ old("dia") }}">
+              <input type="text" id="" name="hora" placeholder="*Hora de inicio" value={{ old("hora") }}>
             </label>
             <label for="">
-          <input type="text" id="" name="responsable" placeholder="*Dictado por" value="{{ old("responsable") }}">
+              <input type="text" id="" name="duracion" placeholder="*Duración en minutos" value={{ old("duracion") }}>
             </label>
           </div>
           <div class="mensajes">
@@ -60,32 +94,12 @@
              </ul>
           <div class="nombre">
             <label for="">
-              <input type="text" id="" name="horario_desde" placeholder="*Horario desde" value={{ old("horario_desde") }}>
-            </label>
-            <label for="">
-              <input type="text" id="" name="horario_hasta" placeholder="*Horario hasta" value={{ old("horario_hasta") }}>
-            </label>
-              </div>
-          <div class="mensajes">
-              <ul>
-                <li><?=isset($errores['telefono'])? $errores['telefono'] : ''; ?></li>
-                <li><?=isset($errores['email'])? $errores['email'] : ''; ?></li>
-             </ul>
-          </div>
-          <div class="nombre">
-            <label for="id_formatos">
-              <select class="form-control" id="id_formatos" name="id_formatos">
-                <option value="">Formato</option>
-                @foreach ($formatos as $formi)
-                  <option value="{{$formi->id}}">{{$formi->formato}}</option>
-                @endforeach
-              </select>
-              <input type="text" id="" name="id_formatos" placeholder="*Formato" value={{ old("id_formatos") }}>
+          <input type="text" id="" name="responsable" placeholder="*Responsable" value="{{ old("responsable") }}">
             </label>
             <label for="">
               <input type="text" id="" name="precio" placeholder="*Precio" value={{ old("precio") }}>
             </label>
-              </div>
+          </div>
           <div class="mensajes">
               <ul>
                 <li><?=isset($errores['telefono'])? $errores['telefono'] : ''; ?></li>

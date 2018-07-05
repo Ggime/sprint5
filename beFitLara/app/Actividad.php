@@ -12,7 +12,7 @@ class Actividad extends Model
 
     public $timestamps = false;
 
-    public function formato(){
-      return $this->belongsTo(Formato::class);
+    public function barrio(){
+      return $this->belongsTo(Barrio::class);
     }
 }
