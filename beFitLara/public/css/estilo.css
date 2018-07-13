@@ -126,6 +126,8 @@ header .completo{
    color: white;
 }
 
+
+
 .avatar{
   width: 50px;
 }
@@ -302,11 +304,6 @@ section .ingresar{
 }
 .nombre{
   width: 100%;
-  margin-left: 0px;
-}
-
-.descripcion{
-  width: 200%;
   margin-left: 0px;
 }
 
@@ -584,6 +581,188 @@ section{
    background-color: #4E9184;
    color: white;
 }
+
+/*Pantalla suma_actividad*/
+
+.iniciar1{
+    width: 100%;
+}
+
+section .ingresar1{
+   border: 2px solid #4E9184;
+   width: 90%;
+   margin: 5%;
+   background-color: #fff;
+   border-radius: 15px;
+   padding: 30px;
+   display: inline-block;
+   box-shadow:
+}
+
+.ingresar1 p{
+   text-align: left;
+   display:block;
+   font-size: 15px;
+   color: #489185;
+   margin-bottom: 18px;
+
+}
+
+.ingresar1 .recor p{
+   text-align: center;
+   display:block;
+   padding-left: 12px;
+   font-size: 12px;
+   color: #A4A4A4;
+   margin-bottom: 20px;
+ }
+
+.ingresar1 select {
+   width: 21%;
+   height: 40px;
+   padding: 6px 20px;
+   margin: 1vh 0vw;
+   display: inline-block;
+   border: 1px solid #ccc;
+   border-radius: 4px;
+   box-sizing: border-box;
+}
+.nombre{
+  width: 100%;
+  margin-left: 0px;
+}
+
+
+.dias{
+  width: 100%;
+  margin-left: 5px;
+}
+
+.ridge{
+border-style: border;
+}
+
+.mensajes2 li{
+  display: none;
+}
+
+.mensajes li{
+  display: inline-block;
+  margin-left: 12%;
+  color: red;
+  font-size: 11px;
+  list-style-type: none;
+}
+
+.mensa li{
+  display: inline-block;
+  margin-left: 30%;
+  color: red;
+  font-size: 11px;
+  list-style-type: none;
+}
+
+.mens li{
+ display: inline-block;
+ margin-left:40px;
+ color: red;
+ font-size: 11px;
+ list-style-type: none;
+}
+
+ .mensaje1 {
+  display: inline-block;
+  margin-left:30%;
+  color: red;
+  font-size: 11px;
+  list-style-type: none;
+}
+
+.foto{
+  width: 98%;
+  height: 40px;
+  padding: 10px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #555;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin: 3px 0px;
+}
+
+
+.selectores{
+  width: 29%;
+  margin-left: 0px;
+}
+
+
+.ingresar1 input[type=text] {
+   width: 21%;
+   padding: 12px 20px;
+   margin: 1vh 0vw;
+   display: inline-block;
+   border: 1px solid #ccc;
+   border-radius: 4px;
+   box-sizing: border-box;
+}
+
+
+.ingresar1 input[type=submit] {
+   width: 21%;
+   background-color: #4E9184;
+   color: white;
+   padding: 14px 20px;
+   margin-left: 0px;
+   margin-top: 15px;
+   border: none;
+   border-radius: 4px;
+   cursor: pointer;
+}
+
+.ingresar1 input[type=submit]:hover {
+   background-color: #5CAD9D;
+}
+
+
+
+
+section .regis{
+   width: 29%;
+   margin-top: 5%;
+   border-radius: 15px;
+   float: left;
+}
+
+.regis p{
+   text-align:left;
+   display:block;
+   padding-left: 20px;
+   font-size: 18px;
+   color: #01DFA5;
+   margin: 25px 0px;
+   font-weight: bold;
+}
+
+.regis p.imp{
+   text-align:left;
+   display:block;
+   padding-left: 20px;
+   font-size: 18px;
+   color: black;
+   margin: 25px 0px;
+   font-weight: bold;
+}
+
+hr {
+   height: 3px;
+   width: 100%;
+   background-color: #A4A4A4;
+}
+
+
 
 
 @media (max-width:900px) {

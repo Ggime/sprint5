@@ -15,14 +15,19 @@
             </ul>
           </div>
         @endif
-          <p>AGREGA TU ACTIVIDAD</p>
+          <p>EDITA TU ACTIVIDAD</p>
           <br>
           <div class="nombre">
             <label for="">
               <input type="text" id="" name="actividad" placeholder="*Actividad" value="{{ old("actividad") }}">
             </label>
-            <label for="">
-          <input type="text" id="" name="categoria_id" placeholder="*Categoria" value="{{ old("categoria_id") }}">
+            <label for="categoria_id">
+              <select id="categoria_id" name="categoria_id" class="form-control">
+              <option value="">*Categoría</option>
+              @foreach ($categorias as $categoria)
+                <option value="{{$categoria->id}}">{{$categoria->categoria}}</option>
+              @endforeach
+              </select>
             </label>
           </div>
           <div class="mensajes">
@@ -32,8 +37,13 @@
              </ul>
           </div>
           <div class="nombre">
-            <label for="">
-              <input type="text" id="" name="barrio_id" placeholder="*Barrio" value="{{ old("barrio_id") }}">
+            <label for="barrio_id">
+              <select id="barrio_id" name="barrio_id" class="form-control">
+              <option value="">*Barrio</option>
+              @foreach ($barrios as $barrio)
+                <option value="{{$barrio->id}}">{{$barrio->barrio}}</option>
+              @endforeach
+              </select>
             </label>
             <label for="">
           <input type="text" id="" name="direccion" placeholder="*Dirección" value="{{ old("direccion") }}">
@@ -45,7 +55,7 @@
                 <li>{{ $errors->has('direccion')? $errors->direccion : ''}}</li>
              </ul>
           </div>
-          <div class="nombre">
+          <!--<div class="nombre">
             <label for="1">
               <input type="checkbox" name="1" value="lunes">Lunes
               </label>
@@ -67,7 +77,7 @@
               <label for="7">
                 <input type="checkbox" name="7" value="sabado">Domingo<br>
             </label>
-          </div>
+          </div>-->
           <div class="nombre">
             <label for="">
               <input type="text" id="" name="hora" placeholder="*Hora de inicio" value={{ old("hora") }}>
@@ -95,16 +105,16 @@
                 <li>{{ $errors->has('precio')? $errors->precio : ''}}</li>
              </ul>
           </div>
-    <div class="foto">
+    <!--<div class="foto">
             <label for="name" >
-              <input type="file" name="foto" value="<?= isset($_FILES['foto']['tmp'])?$_FILES['foto']['tmp']:'';?>" title="Ingresa tu foto de perfil">
+              <input type="file" name="foto" value="<?//= isset($_FILES['foto']['tmp'])?$_FILES['foto']['tmp']:'';?>" title="Ingresa tu foto de perfil">
             </label>
           </div>
               <div class="mens">
               <ul>
-                <li><?=isset($errores['foto'])? $errores['foto'] : ''; ?></li>
+                <li><?//=isset($errores['foto'])? $errores['foto'] : ''; ?></li>
               </ul>
-            </div>
+            </div>-->
 
   <div class="descripcion">
             <input type="textarea" id="" name="descripcion" placeholder="*Descripción" value={{ old("descripcion") }}>

@@ -56,29 +56,27 @@
                 <li><?= isset($errores['apellido'])? $errores['apellido'] : ''; ?></li>
              </ul>
           </div>
-          <div class="nombre">
-            <label for="1">
-              <input type="checkbox" name="1" value="lunes">Lunes
-              </label>
-              <label for="2">
-              <input type="checkbox" name="2" value="martes">Martes
-              </label>
-              <label for="3">
-              <input type="checkbox" name="3" value="miercoles">Miercoles
-              </label>
-              <label for="4">
-              <input type="checkbox" name="4" value="jueves">Jueves
-              </label>
-              <label for="5">
-              <input type="checkbox" name="5" value="viernes">Viernes
-              </label>
-              <label for="6">
-              <input type="checkbox" name="6" value="sabado">Sábado
-              </label>
-              <label for="7">
-                <input type="checkbox" name="7" value="sabado">Domingo<br>
-            </label>
-          </div>
+          <!--<div class="nombre">
+              @foreach ($dias as $value)
+                <label>
+                  <input type="checkbox" name="dia[]" value="{{$value}}" <?php //echo isChecked(old("dia"), $value); ?>> {{$value}}
+                </label>
+              @endforeach
+              <?php
+                /*function isChecked($dias, $value){
+                /  if(!$dias){
+                    return '';
+                  }else{
+                    foreach ($dias as $dia) {
+                      if($dia == $value){
+                        return 'checked';
+                      }
+                    }
+                    return '';
+                  }
+                }*/
+              ?>
+          </div>-->
           <div class="nombre">
             <label for="">
               <input type="text" id="" name="hora" placeholder="*Hora de inicio" value={{ old("hora") }}>
@@ -93,9 +91,7 @@
                 <li><?= isset($errores['nombre'])? $errores['nombre'] : ''; ?></li>
              </ul>
           <div class="nombre">
-            <label for="">
-          <input type="text" id="" name="responsable" placeholder="*Responsable" value="{{ old("responsable") }}">
-            </label>
+
             <label for="">
               <input type="text" id="" name="precio" placeholder="*Precio" value={{ old("precio") }}>
             </label>
