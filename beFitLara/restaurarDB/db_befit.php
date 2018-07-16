@@ -47,14 +47,15 @@ try{
       ('Villa Santa Rita') ;";
       $stmtBarrios = $db->exec($createBarrios);
 
-  $createFormatos = "CREATE TABLE IF NOT EXISTS formatos(
+  $createEdades = "CREATE TABLE IF NOT EXISTS edades(
     id int AUTO_INCREMENT not null primary key,
-    formato varchar(50) not null)";
-    $stmtFormatos = $db->exec($createFormatos);
+    edad varchar(50) not null)";
+    $stmtEdades = $db->exec($createEdades);
 
-  $createFormatos = "INSERT INTO formatos (formato)
-      VALUES ('Indoor'), ('Outdoor');";
-      $stmtFormatos = $db->exec($createFormatos);
+  $createEdades = "INSERT INTO edades (edad)
+        VALUES ('Menor de 13'), ('Entre 13 y 18'), ('Entre 18 y 35'), ('Entre 35 y 50'), ('Mayor a 50');";
+        $stmtEdades = $db->exec($createEdades);
+
 
   $createCategorias = "CREATE TABLE IF NOT EXISTS categorias(
     id int AUTO_INCREMENT not null primary key,
@@ -73,8 +74,8 @@ try{
     apellido varchar(100) not null,
     telefono int(15) not null,
     email varchar(50) unique not null,
-    edad varchar(50) not null,
-    id_barrios varchar(20) not null,
+    id_edad int(20) not null,
+    id_barrios int(20) not null,
     pass varchar(100) not null,
     foto varchar(100)
     )";
@@ -91,7 +92,6 @@ try{
       dia varchar(80) not null,
       horario_desde int not null,
       horario_hasta int not null,
-      id_formatos int,
       descripcion text not null,
       precio varchar(50) not null
     )";

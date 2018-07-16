@@ -44,8 +44,10 @@
         <div class="selectores">
           <label for="">
             <select name="edad">
-              <option selected="true" disabled="disabled">Edad</option>
-
+              <option value="">Selecciona</option>
+              @foreach ($edades as $edad)
+                <option  value="{{$edad->id}}">{{$edad->edad}}</option>
+              @endforeach
             </select>
         </label>
         </div>
@@ -55,8 +57,10 @@
               <div class="selectores">
   <label for="">
       <select name="barrio">
-          <option>Elegi tu Barrio</option>
-            <
+          <option value="">Elegi tu Barrio</option>
+          @foreach ($barrios as $barrio)
+            <option value="{{$barrio->id}}">{{$barrio->barrio}}</option>
+          @endforeach
       </select>
   </label>
   </div>
