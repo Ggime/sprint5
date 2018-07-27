@@ -26,4 +26,9 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function actiParticipo(){
+      return $this->belongsToMany(Actividad::class, 'usuarios_actividades', 'usuario_id', 'actividad_id');
+
+    }
 }

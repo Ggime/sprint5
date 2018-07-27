@@ -6,12 +6,15 @@ use Illuminate\Http\Request;
 use App\Actividad;
 use App\Barrio;
 use App\Categoria;
+use App\UsuariosActividad;
 class ActiControlador extends Controller
 {
     public function listar(){
+      $misActividades = \Auth::user()->actiParticipo;
       $actividades = Actividad::where('user_id', '=', \Auth::user()->id)->paginate(5);
       return
-      view('actividades.listar')->with('actividades', $actividades);
+      view('actividades.listar')->with('actividades', $actividades)
+          ->with('misActividades', $misActividades);
     }
 
     public function veracti(){
@@ -75,7 +78,7 @@ class ActiControlador extends Controller
        'barrio_id' => $request->input('barrio_id'),
        'direccion' => $request->input('direccion'),
        'dia' => $request->input('dia'),
-       'user_id' => $request->user('id'),
+       'user_id' => \Auth::user()->id,
        'hora' => $request->input('hora'),
        'duracion' => $request->input('duracion'),
        'descripcion' => $request->input('descripcion'),
@@ -128,11 +131,16 @@ class ActiControlador extends Controller
      dd($actividad);
 
    }
-
    public function delete(){
     $actividad = Actividad::find($id);
     return view('actividades.listar')
     ->with('actividades', $actividades);
+  }
+  public function anotarme(Request $request){
+    $usuacti = UsuariosActividad::create(
+          ['usuario_id' => \Auth::user()->id,
+          'actividad_id' => $request->input('anotarme')]);
+
   }
 
 }

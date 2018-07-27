@@ -17,6 +17,7 @@ Route::post('/actividades/agregar', 'ActiControlador@guardar')->middleware('auth
 
 Route::get('/actividades/listar', 'ActiControlador@listar')-> middleware('auth');
 Route::get('/actividades/veracti', 'ActiControlador@veracti');
+Route::post('/actividades/anotarme', 'ActiControlador@anotarme')->middleware('auth');
 
 Route::get('actividades/{id}', 'ActiControlador@editar')->middleware('auth');
 
@@ -28,6 +29,8 @@ Route::get('/registro', 'MiControlador@registro');
 Route::get('/faq', 'MiControlador@faq');
 
 Route::get('/', 'MiControlador@index');
+
+
 
 
 Auth::routes();

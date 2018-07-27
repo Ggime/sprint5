@@ -14,13 +14,11 @@
   </div>
   <br>
       <ul>
-        @foreach ($actividades as $acti)
+        @foreach ($misActividades as $acti)
         <div class="nombre">
       {{$acti->actividad}}   {{ $acti->dia}}   {{$acti->hora}}
            <img src="{{ \Storage::disk('public')->url($acti->ruta_imagen) }}">
-          <a href="/actividades/editar">
-            <img src="../img/editar.png" height="18" width="18" alt="">
-          </a>
+
           <img src="../img/delete.png" height="18" width="18" alt="">
         </div>
         <br>

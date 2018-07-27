@@ -14,7 +14,8 @@
   </form>
   </div>
 
-<form class="" action="index.html" method="post">
+<form class="" action="/actividades/anotarme" method="post">
+  @csrf
   <div class="nombre">
     <table>
       <tr>
@@ -43,14 +44,14 @@
           <td>{{$acti->duracion}}</td>
           <td></td>
           <td><img src="{{ \Storage::disk('public')->url($acti->ruta_imagen) }}"></td>
-          <td><input type='checkbox' name='' value=''></td>
+          <td><button type="submit" value="{{$acti->id}}" name="anotarme">Anotarme</button></td>
           </tr>
 
         <br>
         @endforeach
     </div>
       </table>
-      <input type="submit" value="Anotarme"></button>
+
     </form>
 
 

@@ -17,7 +17,7 @@
 
         <div class="nombre">
           <label for="">
-            <input type="text" id="" name="email" placeholder="Tu Email" value="<?//=$email?>">
+            <input type="text" id="" name="email" placeholder="Tu Email" value="">
           </label>
           <label for="" class="pass">
             <input type="password" id="" name="password" placeholder="Contraseña" value="">
