@@ -15,10 +15,16 @@
             </form>
           </div>
            <div class="inicio">
+             @guest
               <a href="/faq" class="fijo">AYUDA</a>
               <a href="/login" class="fijo">INGRESAR</a>
               <a href="/registro" class="movil">REGISTRARSE</a>
-              <a href="/actividades/listar" class="movil">OPCIONES</a>
+              @else
+              <form action="/logout" method="post">
+                @csrf
+                  <input type="submit" value="salir">
+              </form>
+
               <div class="act-contenedor">
                 <label class="ul-label" for="ul">ACTIVIDADES<a href="#" class="actividades"></a></label>
                  <input type="checkbox" class="dar-klik" id="ul">
@@ -26,11 +32,10 @@
                      <li>Hoy</li>
                      <li>Elegir Hora</li>
                      <li>Elegir Fecha</li>
-                     <li>Juego en Equipo</li>
-                     <li>Indoor</li>
-                      <a href="/actividades/agregar">Suma tu Actividad</a>
+                      <a href="/actividades/veracti">Actividades</a>
                    </ul>
               </div>
+              @endguest
               <div class="act-contenedor">
                 <label class="ul-label1" for="ul"><img src="img/flecha.png" height="12" width="22" alt=""><a href="#" class="actividades"></a></label>
                  <input type="checkbox" class="dar-klik" id="ul">
@@ -38,8 +43,7 @@
                      <li>Hoy</li>
                      <li>Elegir Hora</li>
                      <li>Elegir Fecha</li>
-                     <li>Juego en Equipo</li>
-                     <li>Indoor</li>
+                    <a href="/actividades/veracti">Actividades</a>
                     <a href="/actividades/agregar">Suma tu Actividad</a>
                    </ul>
               </div>
@@ -51,10 +55,9 @@
               <a href="#">Elegir Fecha</a>
             </div>
             <div class="menu-derc">
-              <a href="#">Juego en Equipo</a>
-              <a href="#">Aire libre</a>
-              <a href="#">Indoor</a>
+              <a href="/actividades/veracti">Actividades</a>
               <a href="/actividades/agregar">Suma tu actividad</a>
+              <a href="/actividades/listar">Tus actividades</a>
             </div>
           </nav>
        </div>

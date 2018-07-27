@@ -18,22 +18,32 @@
           <p>EDITA TU ACTIVIDAD</p>
           <br>
           <div class="nombre">
-            <label for="">
+            <label for="actividad">
               <input type="text" id="" name="actividad" placeholder="*Actividad" value="{{ old("actividad") }}">
             </label>
-            <label for="categoria_id">
-              <select id="categoria_id" name="categoria_id" class="form-control">
-              <option value="">*Categoría</option>
-              @foreach ($categorias as $categoria)
-                <option value="{{$categoria->id}}">{{$categoria->categoria}}</option>
-              @endforeach
-              </select>
+            <!--<label for="">
+              <input type="text" id="" name="responsable" placeholder="*Responsable">
+            </label>
+          </div>-->
+            <div class="mensajes">
+                <ul>
+                  <li> {{ $errors->has('actividad')? $errors->first('actividad'):''}} </li>
+               </ul>
+            </div>
+            <div class="nombre">
+            <label for="">
+              <label for="categoria_id">
+                <select id="categoria_id" name="categoria_id" class="form-control">
+                <option value="">*Categoría</option>
+                @foreach ($categorias as $categoria)
+                  <option value="{{$categoria->id}}">{{$categoria->categoria}}</option>
+                @endforeach
+                </select>
             </label>
           </div>
           <div class="mensajes">
               <ul>
-                <li> {{ $errors->has('actividad')? $errors->actividad : ''}} </li>
-                <li>{{ $errors->has('categoria_id')? $errors->categoria_id : ''}}</li>
+                <li> {{ $errors->has('categoria_id')? $errors->first('categoria_id') : ''}} </li>
              </ul>
           </div>
           <div class="nombre">
@@ -45,39 +55,26 @@
               @endforeach
               </select>
             </label>
+            </div>
+            <div class="mensajes">
+                <ul>
+                  <li> {{ $errors->has('barrio_id')? $errors->first('barrio_id') : ''}} </li>
+               </ul>
+            </div>
+            <div class="nombre">
             <label for="">
           <input type="text" id="" name="direccion" placeholder="*Dirección" value="{{ old("direccion") }}">
             </label>
-          </div>
+              <label for="">
+                <input type="text" id="" name="dia" placeholder="*Dias de clase" value="{{ old("dia") }}">
+              </label>
+            </div>
           <div class="mensajes">
               <ul>
-                <li>{{ $errors->has('barrio_id')? $errors->barrio_id : ''}}</li>
-                <li>{{ $errors->has('direccion')? $errors->direccion : ''}}</li>
+                <li>{{ $errors->has('direccion')? $errors->first('direccion') : ''}}</li>
+                <li>{{ $errors->has('dia')? $errors->first('dia') : ''}}</li>
              </ul>
           </div>
-          <!--<div class="nombre">
-            <label for="1">
-              <input type="checkbox" name="1" value="lunes">Lunes
-              </label>
-              <label for="2">
-              <input type="checkbox" name="2" value="martes">Martes
-              </label>
-              <label for="3">
-              <input type="checkbox" name="3" value="miercoles">Miercoles
-              </label>
-              <label for="4">
-              <input type="checkbox" name="4" value="jueves">Jueves
-              </label>
-              <label for="5">
-              <input type="checkbox" name="5" value="viernes">Viernes
-              </label>
-              <label for="6">
-              <input type="checkbox" name="6" value="sabado">Sábado
-              </label>
-              <label for="7">
-                <input type="checkbox" name="7" value="sabado">Domingo<br>
-            </label>
-          </div>-->
           <div class="nombre">
             <label for="">
               <input type="text" id="" name="hora" placeholder="*Hora de inicio" value={{ old("hora") }}>
@@ -88,41 +85,40 @@
           </div>
           <div class="mensajes">
               <ul>
-                <li>{{ $errors->has('hora')? $errors->hora : ''}}</li>
-                <li>{{ $errors->has('duracion')? $errors->duracion : ''}}</li>
+                <li>{{ $errors->has('hora')? $errors->first('hora') : ''}}</li>
+                <li>{{ $errors->has('duracion')? $errors->first('duracion') : ''}}</li>
              </ul>
           <div class="nombre">
-            <label for="">
-          <input type="text" id="" name="responsable" placeholder="*Responsable" value="{{ old("responsable") }}">
-            </label>
+
             <label for="">
               <input type="text" id="" name="precio" placeholder="*Precio" value={{ old("precio") }}>
             </label>
+            <label for="" >
+                <input type="text" id="" name="descripcion" placeholder="*Descripción" value={{ old("descripcion") }}>
+            </label>
+          </div>
           </div>
           <div class="mensajes">
               <ul>
-                <li><?=isset($errores['telefono'])? $errores['telefono'] : ''; ?></li>
-                <li>{{ $errors->has('precio')? $errors->precio : ''}}</li>
+                <li>{{ $errors->has('precio')? $errors->first('precio') : ''}}</li>
+                <li>{{ $errors->has('descripcion')? $errors->first('descripcion') : ''}}</li>
              </ul>
           </div>
-    <!--<div class="foto">
+    <div class="foto">
             <label for="name" >
-              <input type="file" name="foto" value="<?//= isset($_FILES['foto']['tmp'])?$_FILES['foto']['tmp']:'';?>" title="Ingresa tu foto de perfil">
+              <input type="file" name="foto" value="<?= isset($_FILES['foto']['tmp'])?$_FILES['foto']['tmp']:'';?>" title="Ingresa tu foto de perfil">
             </label>
           </div>
               <div class="mens">
               <ul>
-                <li><?//=isset($errores['foto'])? $errores['foto'] : ''; ?></li>
+                <li><?=isset($errores['foto'])? $errores['foto'] : ''; ?></li>
               </ul>
-            </div>-->
-
-  <div class="descripcion">
-            <input type="textarea" id="" name="descripcion" placeholder="*Descripción" value={{ old("descripcion") }}>
-          </div>
+            </div>
           <input type="submit" value="AGREGAR!">
         </form>
     </div>
-
+  </div>
   </section>
+
 
 @endsection

@@ -4,96 +4,92 @@
 
 <section class="iniciar">
   <div class="ingresar">
-      <form method="post" enctype="multipart/form-data">
+      <form action='/register' method="post" enctype="multipart/form-data">
+        @csrf
         <p>REGISTRATE EN FIT</p>
         <div class="face">
           <p>Inicia sesión con facebook <a href="https://es-la.facebook.com" target="_blank"></a></p>
-
         </div>
         <br>
         <div class="nombre">
           <label for="">
-            <input type="text" id="" name="nombre" placeholder="*Tu Nombre" value="<?=$nombre??''?>">
+            <input type="text" id="" name="name" placeholder="*Tu Nombre" value={{ old("name") }}>
           </label>
           <label for="">
-        <input type="text" id="" name="apellido" placeholder="*Tu Apellido" value="<?=$apellido??''?>">
+        <input type="text" id="" name="apellido" placeholder="*Tu Apellido" value={{ old("apellido") }}>
           </label>
         </div>
         <div class="mensajes">
             <ul>
-              <li><?= isset($errores['nombre'])? $errores['nombre'] : ''; ?></li>
-              <li><?= isset($errores['apellido'])? $errores['apellido'] : ''; ?></li>
+              <li>{{ $errors->has('name')? $errors->first('name') : ''}}</li>
+              <li>{{ $errors->has('apellido')? $errors->first('apellido') : ''}}</li>
            </ul>
         </div>
-
         <div class="nombre">
           <label for="">
-            <input type="text" id="" name="telefono" placeholder="*Un teléfono" value="<?=$telefono??''?>">
+            <input type="text" id="" name="telefono" placeholder="*Un teléfono" value={{ old("telefono") }}>
           </label>
           <label for="">
-            <input type="text" id="" name="email" placeholder="*Tu Email" value="<?=$email??''?>">
+            <input type="text" id="" name="email" placeholder="*Tu Email" value={{ old("email") }}>
           </label>
             </div>
         <div class="mensajes">
             <ul>
-              <li><?=isset($errores['telefono'])? $errores['telefono'] : ''; ?></li>
-              <li><?=isset($errores['email'])? $errores['email'] : ''; ?></li>
+              <li>{{ $errors->has('telefono')? $errors->first('telefono') : ''}}</li>
+              <li>{{ $errors->has('email')? $errors->first('email') : ''}}</li>
            </ul>
         </div>
-
-        <div class="selectores">
+        <div class="nombre">
           <label for="">
-            <select name="edad">
-              <option value="">Selecciona</option>
-              @foreach ($edades as $edad)
-                <option  value="{{$edad->id}}">{{$edad->edad}}</option>
-              @endforeach
-            </select>
-        </label>
-        </div>
-        <div class="mensaje1">
-              <?= isset($errores['edad'])? $errores['edad'] : ''; ?>
-              </div>
-              <div class="selectores">
-  <label for="">
-      <select name="barrio">
-          <option value="">Elegi tu Barrio</option>
-          @foreach ($barrios as $barrio)
-            <option value="{{$barrio->id}}">{{$barrio->barrio}}</option>
-          @endforeach
-      </select>
-  </label>
-  </div>
-  <div class="mensaje1">
-        <?=isset($errores['barrio'])? $errores['barrio'] : ''; ?>
-  </div>
-  <div class="foto">
-          <label for="name" >
-            <input type="file" name="foto" value="<?= isset($_FILES['foto']['tmp'])?$_FILES['foto']['tmp']:'';?>" title="Ingresa tu foto de perfil">
+            <input type="text" id="" name="edad" placeholder="*Edad" value={{ old("edad") }}>
           </label>
         </div>
-            <div class="mens">
+        <div class="mensajes">
+            <ul>
+            <li>{{ $errors->has('edad')? $errors->first('edad') : ''}}</li>
+           </ul>
+        </div>
+        <div class="nombre">
+          <label for="barrio_id">
+            <select id="barrio_id" name="barrio_id" class="form-control">
+            <option value="">*Barrio</option>
+            @foreach ($barrios as $barrio)
+              <option value="{{$barrio->id}}">{{$barrio->barrio}}</option>
+            @endforeach
+            </select>
+          </label>
+          </div>
+          <div class="mensajes">
+              <ul>
+                <li> {{ $errors->has('barrio_id')? $errors->first('barrio_id') : ''}} </li>
+             </ul>
+          </div>
+          <div class="foto">
+            <label for="name" >
+              <input type="file" name="foto" value="<?= isset($_FILES['foto']['tmp'])?$_FILES['foto']['tmp']:'';?>" title="Ingresa tu foto de perfil">
+            </label>
+          </div>
+          <div class="mens">
             <ul>
               <li><?=isset($errores['foto'])? $errores['foto'] : ''; ?></li>
             </ul>
           </div>
-
-<div class="nombre">
-        <input type="password" id="" name="pass" placeholder="Contraseña" value="">
-        <input type="password" id="" name="rpass" placeholder="Repetir Contraseña" value="">
-        </div>
-        <div class="mensa">
+          <div class="nombre">
+            <input type="password" id="" name="password" placeholder="Contraseña" value="">
+            <input type="password" id="" name="password_confirmation" placeholder="Repetir Contraseña" value="">
+          </div>
+          <div class="mensa">
             <ul>
-              <li><?=isset($errores['pass'])? $errores['pass'] : ''; ?></li>
-              <li><?=isset($errores['rpass'])? $errores['rpass'] : ''; ?></li>
+              <li>{{ $errors->has('password')? $errors->first('password') : ''}}</li>
+              <li>{{ $errors->has('rpass')? $errors->first('rpass') : ''}}</li>
            </ul>
-        </div>
-        <div class="oki">
+         </div>
+         <div class="oki">
           <label class="ok">
             <input type="checkbox" name="newsletter" value="newsletter"> Quiero recibir novedades de FIT<br>
             <span class="checkmark"></span>
           </label>
-        </div>
+         </div>
         <input type="submit" value="SUMATE!">
       </form>
   </div>

@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Edades;
 use App\Barrio;
 
 class MiControlador extends Controller
@@ -14,10 +13,12 @@ class MiControlador extends Controller
 
     public function registro(){
       $barrios = Barrio::all();
-      $edades = Edades::all();
-      return view('registro')->with('edades', $edades)
-                             ->with ('barrios', $barrios);
+      return view('registro')
+      ->with ('barrios', $barrios);
     }
+
+
+
 
     public function login(){
       return view('login');

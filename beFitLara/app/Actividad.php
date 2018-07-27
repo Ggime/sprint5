@@ -14,5 +14,6 @@ class Actividad extends Model
 
     public function barrio(){
       return $this->belongsTo(Barrio::class);
+
     }
 }

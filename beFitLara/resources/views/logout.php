@@ -2,5 +2,7 @@
 
 @section ('contenido')
 
-<h2>Login de Usuarios </h2>
+<form class="" action="index.html" method="post">
+
+</form>
 @endsection

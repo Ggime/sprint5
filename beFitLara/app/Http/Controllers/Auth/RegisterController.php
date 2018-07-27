@@ -10,17 +10,6 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 
 class RegisterController extends Controller
 {
-    /*
-    |--------------------------------------------------------------------------
-    | Register Controller
-    |--------------------------------------------------------------------------
-    |
-    | This controller handles the registration of new users as well as their
-    | validation and creation. By default this controller uses a trait to
-    | provide this functionality without requiring any additional code.
-    |
-    */
-
     use RegistersUsers;
 
     /**
@@ -28,7 +17,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = 'auth/login';
 
     /**
      * Create a new controller instance.
@@ -50,9 +39,23 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
             'name' => 'required|string|max:255',
+            'apellido' => 'required|string|max:255',
+            'telefono'=> 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
+            'edad' => 'required|string|max:15',
+            'barrio_id' => 'nullable',
             'password' => 'required|string|min:6|confirmed',
+            //'avatar' => 'nullable|string|max:255',
         ]);
+
+        $mensajes = [
+          'name.required' => 'Ingresa tu Nombre',
+          'apellido.required' => 'Ingresa tu Apellido',
+          'telefono.required' => 'Ingresa tu Telefono',
+          'email.required' => 'Ingresa tu Email',
+          'edad.required' => 'Ingresa tu Edad',
+          'password.required' => 'Ingresa tu clave',
+        ];
     }
 
     /**
@@ -65,8 +68,13 @@ class RegisterController extends Controller
     {
         return User::create([
             'name' => $data['name'],
+            'apellido' => $data['apellido'],
+            'telefono' => $data['telefono'],
             'email' => $data['email'],
+            'edad' => $data['edad'],
+            'barrio_id' => $data['barrio_id'],
             'password' => Hash::make($data['password']),
+            //'avatar' => $data['avatar'],
         ]);
     }
 }

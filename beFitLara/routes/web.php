@@ -15,12 +15,13 @@
 Route::get('/actividades/agregar', 'ActiControlador@agregar')->middleware('auth');
 Route::post('/actividades/agregar', 'ActiControlador@guardar')->middleware('auth');
 
-Route::get('/actividades/listar', 'ActiControlador@listar');
+Route::get('/actividades/listar', 'ActiControlador@listar')-> middleware('auth');
+Route::get('/actividades/veracti', 'ActiControlador@veracti');
 
 Route::get('actividades/{id}', 'ActiControlador@editar')->middleware('auth');
-Route::post('/actividades/{id}', 'ActiControlador@actualizar')->middleware('auth');
 
-Route::get('/login', 'MiControlador@login');
+Route::post('/actividades/{id}', 'ActiControlador@actualizar')->middleware('auth');
+Route::post('/actividades/{id}, ActiControlador@delete');
 
 Route::get('/registro', 'MiControlador@registro');
 

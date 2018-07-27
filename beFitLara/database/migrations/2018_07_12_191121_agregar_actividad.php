@@ -16,12 +16,13 @@ class AgregarActividad extends Migration
         $table->integer('barrio_id')->index();
         $table->integer('categoria_id')->index();
         $table->string('direccion', '80');
-        //$table->integer('dia')->nullable();
+        $table->integer('user_id')->index();
+        $table->string('dia')->nullable();
         $table->integer('hora')->nullable();
         $table->integer('duracion')->nullable();
-        $table->string('descripcion', '150');
+        $table->string('descripcion', '250');
         $table->string('precio','50');
-        //$table->string('foto','150');
+        $table->string('poster','150');
         $table->timestamps();
       });
 

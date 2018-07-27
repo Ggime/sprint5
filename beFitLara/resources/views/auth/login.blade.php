@@ -2,69 +2,55 @@
 
 @section('contenido')
 
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
+<section class="iniciar">
+  <div class="ingresar">
+      <form method="post" action="{{route('login')}}" enctype="multipart/form-data">
+        @csrf
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}" aria-label="{{ __('Login') }}">
-                        @csrf
+        <p>BIENVENIDO A LA COMUNIDAD BE-FIT!
+          <br> Inicia tu sesión para conocer todas las actividades.</p>
+        <div class="face">
+          <p>Inicia sesión con facebook <a href="https://es-la.facebook.com" target="_blank"></a></p>
 
-                        <div class="form-group row">
-                            <label for="email" class="col-sm-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
-
-                                @if ($errors->has('email'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
-
-                                @if ($errors->has('password'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <div class="col-md-6 offset-md-4">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> {{ __('Remember Me') }}
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Login') }}
-                                </button>
-
-                                <a class="btn btn-link" href="{{ route('password.request') }}">
-                                    {{ __('Forgot Your Password?') }}
-                                </a>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
         </div>
-    </div>
-</div>
+        <br>
+
+        <div class="nombre">
+          <label for="">
+            <input type="text" id="" name="email" placeholder="Tu Email" value="<?//=$email?>">
+          </label>
+          <label for="" class="pass">
+            <input type="password" id="" name="password" placeholder="Contraseña" value="">
+          </label>
+        </div>
+        <div class="mensajes">
+            <ul>
+              <li><?//=isset($errores['email'])? $errores['email'] : ''; ?></li>
+              <li><?//=isset($errores['pass'])? $errores['pass'] : ''; ?></li>
+           </ul>
+        </div>
+         <div class="recor">
+           <p><a href="registro_responsive.php">¿Olvidaste tu contrasena?</a>¿No sos usuario? <a href="registro_responsive.php">Registrate!</a></p>
+         </div>
+
+        <div class="oki">
+          <label class="ok">
+            <input type="checkbox" name="recordar" value="recordar"> Recordarme<br>
+            <span class="checkmark"></span>
+          </label>
+        </div>
+        <input type="submit" value="INGRESAR">
+      </form>
+  </div>
+  <div class="regis">
+      <p>Registrándote en Be-Fit! vas a poder recibir en tu correo lo mejor de la Agenda cada semana!</p>
+        <hr>
+        <br>
+      <p class="imp">Además podés guardar Eventos Favoritos y Subir Actividades!</p>
+        <br>
+        <hr>
+        <br>
+      <p>No te quedes afuera, en 1 simple paso podés ser parte de esta comunidad.</p>
+  </div>
+</section>
 @endsection
