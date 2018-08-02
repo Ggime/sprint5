@@ -19,7 +19,7 @@ a{
    background-size: 50%;
    padding-top: 1px;
    margin: 0 auto;
-   width: 80vw;
+
 }
 
 header .completo{
@@ -57,17 +57,14 @@ header .completo{
 }
 
 .busqueda {
-   margin-left: 100px;
+   margin-left: 80px;
    display: inline-block;
-   width: 45%;
+   width: 50%;
    position: relative;
    z-index: 2;
    padding-bottom: 20px;
 }
 
-.busqueda form{
-   width: 90%;
-}
 
 .poner{
    width: 65%;
@@ -127,11 +124,28 @@ header .completo{
 }
 
 
-
 .avatar{
   width: 50px;
 }
 
+.inicio .button2{
+  background-color: #489185;
+  color: white;
+  border: none;
+  padding: 2px 4px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 13px;
+  margin: 4px 2px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button2:hover {
+    color: #01DFA5;
+}
 
 
 .menu{
@@ -143,11 +157,9 @@ header .completo{
 .menu .menu-derc{
    background-color:  #01DFA5;
    font-size:1rem;
-   margin-right: 0;
    display: inline-block;
    padding: 10px 0;
-   float:right;
-   width: 60%;
+   width: 100%;
 }
 
 .menu .menu-izq{
@@ -155,8 +167,8 @@ header .completo{
    font-size:1rem;
    padding: 10px;
    display: inline-block;
-   float: left;
-   width: 40%;
+   float: right;
+   width: 60%;
 }
 
 .menu a {
@@ -197,17 +209,16 @@ section .sport {
 }
 
 section .sport img{
-   margin-top: 50px;
-   width: 300px;
-   margin-left: 0;
+   margin-top: 40px;
+   width: 400px;
+   margin-left: 12%;
 }
 
 section .info {
-   margin: 25px 10px;
-   float: left;
+   margin-top: 50px;
+   margin-left: 50px;
    display: inline-block;
    width: 60%;
-   margin-left: 20px;
    text-align: justify;
 }
 
@@ -726,9 +737,6 @@ border-style: border;
    background-color: #5CAD9D;
 }
 
-
-
-
 section .regis{
    width: 29%;
    margin-top: 5%;
@@ -761,13 +769,100 @@ hr {
    width: 100%;
    background-color: #A4A4A4;
 }
+/*Pantalla actividades y tus actividades*/
 
+.actividad h2{
+  margin-left: 5%;
+  color: #489185;
+}
+.actividad table {
+    border-collapse: collapse;
+    width: 80%;
+    margin-left: 10%;
+}
 
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+    background-color: #645355;
+    color: white;
+}
+
+.actividad .button{
+  background-color: #f44336;
+  color: white;
+  border: 2px solid #f44336;
+  padding: 2px 4px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 10px;
+  margin: 4px 2px;
+  border-radius: 50%;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button:hover {
+    background-color:white;
+    color: black;
+}
+
+.actividad .button1{
+  background-color: #00DFAA;
+  color: white;
+  border: 2px solid #00DFAA;
+  padding: 2px 4px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 10px;
+  margin: 4px 2px;
+  border-radius: 50%;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button1:hover {
+    background-color:white;
+    color: black;
+}
+
+.actividad .control{
+  margin-left: 10%;
+}
+
+.actividad .editar{
+  width: 18px;
+  height: 18px;
+  margin: 0px 2px;
+}
+
+.paginate {
+  margin-left: 10%;
+}
+.pagination li{
+  margin-left: 10px;
+  float:left;
+  padding: 5px;
+  color: #489185;
+  font-family: trebuchet ms;
+  font-size: 15px;
+  background-color: white;
+  display: inline-block;
+}
 
 
 @media (max-width:900px) {
 .general{
-    width: 90vw;
+    width: 100vw;
     margin: 0 auto;
   }
 
@@ -779,10 +874,13 @@ hr {
     position: relative;
   }
 
-.busqueda {
-    width:80%;
-    margin-top: 0;
-    display: block;
+  .busqueda {
+     margin-left: 80px;
+     display: inline-block;
+     width: 60%;
+     position: relative;
+     z-index: 2;
+     padding-bottom: 10px;
   }
 
 .inicio{
@@ -800,7 +898,7 @@ hr {
     margin: 0 auto;
   }
 
-  .avatar{
+.avatar{
     width: 40px;
   }
 
@@ -859,8 +957,6 @@ hr {
 .ul-label1{
     display:none;
   }
-
-
 
 #ul:checked ~ .menun {
     display: block;
@@ -969,7 +1065,60 @@ section .regis{
 .respuestas{
     font-size: 18px;
   }
-}
+
+  /*Pantalla actividades y tus actividades*/
+
+.actividad {
+    margin: 35px 20px;
+  }
+
+  .actividad h2{
+    margin-left: 0%;
+    color: #489185;
+    font-size: 14px;
+  }
+
+  .actividad table {
+      border-collapse: collapse;
+      width: 95%;
+      margin: 2%;
+      padding: 1px;
+  }
+
+  .actividad th, td {
+      text-align: left;
+      padding: 2px;
+      font-size: 13px;
+  }
+
+  .actividad .button{
+    border: 1px solid #f44336;
+    padding: 2px 3px;
+    font-size: 6px;
+    margin: 2px 1px;
+    border-radius: 50%;
+  }
+
+  .actividad .editar{
+    width: 13px;
+    height: 13px;
+    margin: 0px 2px;
+  }
+
+  .paginate {
+    margin-left: 0%;
+  }
+
+  .pagination li{
+    float:left;
+    padding: 5px;
+    color: #489185;
+    font-family: trebuchet ms;
+    font-size: 12px;
+    background-color: white;
+    display: inline-block;
+  }
+
 
 @media (max-width:600px) {
 
@@ -1191,4 +1340,49 @@ section .regis{
   height: 16vh;
   resize: none;
   }
+
+  /*Pantalla actividades y tus actividades*/
+
+  .actividad h2{
+    margin-left: 0%;
+    color: #489185;
+    font-size: 10px;
+  }
+  .actividad table {
+      border-collapse: collapse;
+      width: 98%;
+      margin: 1%;
+      padding: 1px;
+  }
+
+  .actividad th, td {
+      text-align: left;
+      padding: 1px;
+      font-size: 8px;
+  }
+
+  .actividad .button{
+    border: 1px solid #f44336;
+    padding: 1px 2px;
+    font-size: 5px;
+    margin: 2px 1px;
+    border-radius: 50%;
+  }
+
+  .actividad .editar{
+    width: 10px;
+    height: 10px;
+    margin: 0px 2px;
+  }
+
+  .pagination li{
+    float:left;
+    padding: 5px;
+    color: #489185;
+    font-family: trebuchet ms;
+    font-size: 9px;
+    background-color: white;
+    display: inline-block;
+  }
+
 }

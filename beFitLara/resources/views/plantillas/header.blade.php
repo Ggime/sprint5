@@ -1,5 +1,5 @@
 
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <div class="general">
       <header class="completo">
         <div class="encabezado">
@@ -22,17 +22,18 @@
               @else
               <form action="/logout" method="post">
                 @csrf
-                  <input type="submit" value="salir">
+                  <input class="button2" type="submit" value="SALIR">
+                  <a href="/faq" class="fijo">AYUDA</a>
               </form>
 
+
               <div class="act-contenedor">
-                <label class="ul-label" for="ul">ACTIVIDADES<a href="#" class="actividades"></a></label>
+                <label class="ul-label" for="ul">ACTIVIDADES +<a href="#" class="actividades"></a></label>
                  <input type="checkbox" class="dar-klik" id="ul">
                    <ul class="menun">
-                     <li>Hoy</li>
-                     <li>Elegir Hora</li>
-                     <li>Elegir Fecha</li>
-                      <a href="/actividades/veracti">Actividades</a>
+                     <a href="/actividades/veracti">Actividades</a>
+                     <a href="/actividades/agregar">Suma tu Actividad</a>
+                     <a href="/actividades/listar">Tus actividades</a>
                    </ul>
               </div>
               @endguest
@@ -40,20 +41,19 @@
                 <label class="ul-label1" for="ul"><img src="img/flecha.png" height="12" width="22" alt=""><a href="#" class="actividades"></a></label>
                  <input type="checkbox" class="dar-klik" id="ul">
                    <ul class="menun">
-                     <li>Hoy</li>
-                     <li>Elegir Hora</li>
-                     <li>Elegir Fecha</li>
+                     <label class="ul-label" for="ul">ACTIVIDADES +<a href="#" class="actividades"></a></label>
                     <a href="/actividades/veracti">Actividades</a>
                     <a href="/actividades/agregar">Suma tu Actividad</a>
+                    <a href="/actividades/listar">Tus actividades</a>
                    </ul>
               </div>
           </div>
           <nav class="menu">
-            <div class="menu-izq">
+            <!--<div class="menu-izq">
               <a href="#">Hoy</a>
               <a href="#">Elegir Hora</a>
               <a href="#">Elegir Fecha</a>
-            </div>
+            </div>-->
             <div class="menu-derc">
               <a href="/actividades/veracti">Actividades</a>
               <a href="/actividades/agregar">Suma tu actividad</a>

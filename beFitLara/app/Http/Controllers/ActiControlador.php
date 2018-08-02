@@ -10,22 +10,28 @@ use App\UsuariosActividad;
 class ActiControlador extends Controller
 {
     public function listar(){
-      $misActividades = \Auth::user()->actiParticipo;
-      $actividades = Actividad::where('user_id', '=', \Auth::user()->id)->paginate(5);
+      $misActividades = \Auth::user()->actiParticipo()->paginate(2);
+      $actividades = Actividad::where('user_id', '=', \Auth::user()->id)->paginate(2);
       return
       view('actividades.listar')->with('actividades', $actividades)
           ->with('misActividades', $misActividades);
     }
 
-    public function veracti(){
-      if(\Auth::guest()){
-        $actividades = Actividad::paginate(5);
-      }else{
-        $actividades = Actividad::where('user_id', '<>', \Auth::user()->id)->paginate(5);
-      }
 
+    public function veracti(){
+      $barrios = Barrio::orderBy('barrio','ASC')->get();
+      $categorias = Categoria::orderBy('categoria','ASC')->get();
+
+      if(\Auth::guest()){
+        $actividades = Actividad::Paginate(5);
+
+      }else{
+        $actividades = Actividad::where('user_id', '<>', \Auth::user()->id)->Paginate(5);
+      }
       return
       view('actividades.veracti')->with('actividades', $actividades);
+      //->with('barrios', $barrios)
+      // ->with('categorias', $categorias);
     }
 
     public function agregar(){
@@ -66,10 +72,10 @@ class ActiControlador extends Controller
 
      $this->validate($request, $reglas, $mensajes);
 
-     //$ruta_imagen='';
-     //if($request->file('poster')){
-    //   $ruta_imagen= $request->file('poster')->store('poster','public'));
-     //}
+     $ruta_imagen='';
+     if($request->file('poster')){
+     $ruta_imagen= $request->file('poster')->store('poster','public');
+     }
 
 
      $actividades = Actividad::create(
@@ -82,15 +88,12 @@ class ActiControlador extends Controller
        'hora' => $request->input('hora'),
        'duracion' => $request->input('duracion'),
        'descripcion' => $request->input('descripcion'),
-       'precio' => $request->input('precio')
-       //'ruta_imagen' => $request->input('ruta_imagen')
+       'precio' => $request->input('precio'),
+       'ruta_imagen' => 'ruta_imagen'
      ]
    );
-
-
     return redirect('/actividades/listar')
     ->with('mensaje', 'Actividad creada exitosamente');
-
    }
 
    public function editar($id){
@@ -102,23 +105,39 @@ class ActiControlador extends Controller
      ->with('actividad',$actividad)
      ->with('barrios', $barrios)
      ->with('categorias', $categorias);
-
    }
 
    public function actualizar($id, Request $request){
-     $this->validate($request, [
+     $mensajes = [
+       'actividad.required' => 'Ingresa la actividad',
+       'categoria_id.required' => 'Ingresa la categoria',
+       'barrio_id.required' => 'Ingresa el barrio',
+       'direccion.required' => 'Ingresa la dirección',
+       'dia.required' => 'Que dias se da la clase',
+       'hora.required' => 'Ingresa la hora de inicio',
+       'duracion.required' => 'Ingresa la duracion de la clase',
+       //'user_id' => 'required',
+       'precio.required' => 'Ingresa el precio',
+       'descripcion.required' => 'Descripción de la actividad',
+     ];
+     $this->validate(
+       $request, [
        'actividad' =>'required|unique:actividades,actividad,'.$id,
-       'actividad' => 'required',
        'categoria_id' => 'required',
        'barrio_id' => 'required',
        'direccion' => 'required',
        'dia' => 'required',
+       //'user_id' => \Auth::user()->id,
        'hora' => 'required',
        'duracion' =>'required',
        'descripcion' => 'required',
-       'precio' => 'required'
-       //'poster'
-     ]);
+       'precio' => 'required',
+       //'ruta_imagen' => 'ruta_imagen'
+       //'poster' =>
+     ],
+    $mensajes);
+
+
 //me traigo la actividad
      $actividad = Actividad::find($id);
 //guardo los nuevos valores
@@ -126,21 +145,40 @@ class ActiControlador extends Controller
 //guardar en la base de datos
      $actividad->save();
 
-     echo 'se actualizo la activdad';
-
-     dd($actividad);
+     return redirect('/actividades/listar')
+     ->with('mensaje', 'Actividad editada exitosamente');
 
    }
-   public function delete(){
+   public function delete($id){
     $actividad = Actividad::find($id);
-    return view('actividades.listar')
-    ->with('actividades', $actividades);
+    $actividad->delete();
+
+    $misActividades = \Auth::user()->actiParticipo;
+    $actividades = Actividad::where('user_id', '=', \Auth::user()->id)->paginate(1);
+    return view('actividades.listar')->with('actividades', $actividades)
+        ->with('misActividades', $misActividades);
   }
+
+  public function desuscribirse($id){
+   $actividad = UsuariosActividad::where('actividad_id', '=', $id)->where('usuario_id','=', \Auth::user()->id);
+   $actividad->delete();
+
+   $misActividades = \Auth::user()->actiParticipo;
+   $actividades = Actividad::where('user_id', '=', \Auth::user()->id)->paginate(5);
+   return view('actividades.listar')->with('actividades', $actividades)
+       ->with('misActividades', $misActividades);
+ }
+
   public function anotarme(Request $request){
     $usuacti = UsuariosActividad::create(
           ['usuario_id' => \Auth::user()->id,
           'actividad_id' => $request->input('anotarme')]);
+          $misActividades = \Auth::user()->actiParticipo;
+          $actividades = Actividad::where('user_id', '=', \Auth::user()->id)->paginate(5);
+          return view('actividades.listar')->with('actividades', $actividades)
+              ->with('misActividades', $misActividades);
+        }
 
-  }
+
 
 }

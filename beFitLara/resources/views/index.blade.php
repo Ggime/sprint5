@@ -5,19 +5,18 @@
       <section>
          <article class="articulo1">
            <div class="sport">
-             <img src="img/depor2.png" alt="">
+             <img src="img/bafit.png" alt="">
               </div>
            <div class="info">
-             <h2>Be-Fit!</h2>
+             <h2>Ba-Fit!</h2>
              <br>
                <h1>¿Donde hacer deporte en Buenos Aires?</h1><br>
-                 <p>Esta web te ayuda a encontrar TU lugar, TU actividad y TU horario pero sobre todo ofrece conectividad entre la comunidad de Be-Fit! donde podes ingresar tu actividad para ponerte en contacto con otras personas  y así conformar tu propio equipo de entrenamiento.</p><br>
+                 <p>Esta web te ayuda a encontrar TU lugar, TU actividad y TU horario,
+                    <br>pero sobre todo ofrece conectividad entre la comunidad de Ba-Fit!
+                    <br>donde podes ingresar tu actividad para ponerte en contacto con otras personas
+                    <br>y así conformar tu propio equipo de entrenamiento.</p><br>
                 <br>
-                 <ul>
-                   <li>Ubicación: Esta página cuenta con un geolocalizador ingresando la dirección con un radio de búsqueda de hasta 10 cuadras</li><br>
-                   <li>Horarios: Posibilita encontrar la actividad deseada, chequear horarios y días disponibles y así, poder elegir ir antes o después del trabajo, en el horario de almuerzo o si podés disponer de tu tiempo, cuando tengas un rato libre</li><br>
-                   <li>Oferta de Actividades: Si sos una persona a la que le gusta el ejercicio al aire libre o indoor, en grupo, en equipo o individual podes encontrar una disciplina que se adapte a tus gustos y necesidades. </li><br>
-                 </ul>
+
              </div>
          </article>
       </section>

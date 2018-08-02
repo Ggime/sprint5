@@ -14,6 +14,13 @@ class Actividad extends Model
 
     public function barrio(){
       return $this->belongsTo(Barrio::class);
+    }
 
+    public function categoria(){
+      return $this->belongsTo(Categoria::class);
+    }
+
+    public function user(){
+      return $this->belongsTo(User::class);
     }
 }

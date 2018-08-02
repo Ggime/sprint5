@@ -19,19 +19,19 @@ Route::get('/actividades/listar', 'ActiControlador@listar')-> middleware('auth')
 Route::get('/actividades/veracti', 'ActiControlador@veracti');
 Route::post('/actividades/anotarme', 'ActiControlador@anotarme')->middleware('auth');
 
-Route::get('actividades/{id}', 'ActiControlador@editar')->middleware('auth');
+Route::get('actividades/editar/{id}', 'ActiControlador@editar')->middleware('auth');
+Route::post('actividades/editar/{id}', 'ActiControlador@actualizar')->middleware('auth');
 
-Route::post('/actividades/{id}', 'ActiControlador@actualizar')->middleware('auth');
-Route::post('/actividades/{id}, ActiControlador@delete');
+// Route::post('/actividades/{id}', 'ActiControlador@actualizar')->middleware('auth');
+Route::delete('/actividades/{id}', 'ActiControlador@delete');
+
+Route::delete('/actividades/e/{id}', 'ActiControlador@desuscribirse');
 
 Route::get('/registro', 'MiControlador@registro');
 
 Route::get('/faq', 'MiControlador@faq');
 
 Route::get('/', 'MiControlador@index');
-
-
-
 
 Auth::routes();
 

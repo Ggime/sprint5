@@ -4,9 +4,9 @@
 
   <section class="iniciar">
     <div class="ingresar">
-        <form action='/actividades/guardar' method="post" enctype="multipart/form-data">
+        <form action="/actividades/editar/{{$actividad->id}}" method="post" enctype="multipart/form-data">
           {{ csrf_field() }}
-        @if (count($errors)>0)
+        <!--@if (count($errors)>0)
           <div class="alert alert-danger">
             <ul>
               @foreach ($errors->all() as $error)
@@ -14,12 +14,12 @@
               @endforeach
             </ul>
           </div>
-        @endif
+        @endif-->
           <p>EDITA TU ACTIVIDAD</p>
           <br>
           <div class="nombre">
             <label for="actividad">
-              <input type="text" id="" name="actividad" placeholder="*Actividad" value="{{ old("actividad") }}">
+              <input type="text" id="" name="actividad" placeholder="*Actividad" value="{{$actividad->actividad}}" >
             </label>
             <!--<label for="">
               <input type="text" id="" name="responsable" placeholder="*Responsable">
@@ -31,12 +31,16 @@
                </ul>
             </div>
             <div class="nombre">
-            <label for="">
-              <label for="categoria_id">
+             <label for="categoria_id">
                 <select id="categoria_id" name="categoria_id" class="form-control">
                 <option value="">*Categoría</option>
+
                 @foreach ($categorias as $categoria)
+                  @if ($categoria->id === $actividad->categoria->id)
+                    <option selected value="{{$categoria->id}}">{{$categoria->categoria}}</option>
+                  @else
                   <option value="{{$categoria->id}}">{{$categoria->categoria}}</option>
+                  @endif
                 @endforeach
                 </select>
             </label>
@@ -48,10 +52,15 @@
           </div>
           <div class="nombre">
             <label for="barrio_id">
+
               <select id="barrio_id" name="barrio_id" class="form-control">
               <option value="">*Barrio</option>
               @foreach ($barrios as $barrio)
-                <option value="{{$barrio->id}}">{{$barrio->barrio}}</option>
+                @if ($barrio->id === $actividad->barrio->id)
+                  <option selected value="{{$barrio->id}}">{{$barrio->barrio}}</option>
+                @else
+                  <option value="{{$barrio->id}}">{{$barrio->barrio}}</option>
+                @endif
               @endforeach
               </select>
             </label>
@@ -62,11 +71,11 @@
                </ul>
             </div>
             <div class="nombre">
-            <label for="">
-          <input type="text" id="" name="direccion" placeholder="*Dirección" value="{{ old("direccion") }}">
+            <label for="direccion">
+          <input type="text" id="" name="direccion" placeholder="*Dirección" value="{{$actividad->direccion}}">
             </label>
-              <label for="">
-                <input type="text" id="" name="dia" placeholder="*Dias de clase" value="{{ old("dia") }}">
+              <label for="dia">
+                <input type="text" id="" name="dia" placeholder="*Dias de clase" value="{{$actividad->dia}}">
               </label>
             </div>
           <div class="mensajes">
@@ -76,11 +85,11 @@
              </ul>
           </div>
           <div class="nombre">
-            <label for="">
-              <input type="text" id="" name="hora" placeholder="*Hora de inicio" value={{ old("hora") }}>
+            <label for="hora">
+              <input type="text" id="" name="hora" placeholder="*Hora de inicio" value="{{$actividad->hora}}">
             </label>
-            <label for="">
-              <input type="text" id="" name="duracion" placeholder="*Duración en minutos" value={{ old("duracion") }}>
+            <label for="duracion">
+              <input type="text" id="" name="duracion" placeholder="*Duración en minutos" value="{{$actividad->duracion}}">
             </label>
           </div>
           <div class="mensajes">
@@ -90,11 +99,11 @@
              </ul>
           <div class="nombre">
 
-            <label for="">
-              <input type="text" id="" name="precio" placeholder="*Precio" value={{ old("precio") }}>
+            <label for="precio">
+              <input type="text" id="" name="precio" placeholder="*Precio" value="{{$actividad->precio}}">
             </label>
-            <label for="" >
-                <input type="text" id="" name="descripcion" placeholder="*Descripción" value={{ old("descripcion") }}>
+            <label for="descripcion" >
+                <input type="text" id="" name="descripcion" placeholder="*Descripción" value="{{$actividad->descripcion}}">
             </label>
           </div>
           </div>
@@ -104,16 +113,12 @@
                 <li>{{ $errors->has('descripcion')? $errors->first('descripcion') : ''}}</li>
              </ul>
           </div>
-    <div class="foto">
+    <!--<div class="foto">
             <label for="name" >
-              <input type="file" name="foto" value="<?= isset($_FILES['foto']['tmp'])?$_FILES['foto']['tmp']:'';?>" title="Ingresa tu foto de perfil">
+                <input type="file" name="poster" value="">
+
             </label>
-          </div>
-              <div class="mens">
-              <ul>
-                <li><?=isset($errores['foto'])? $errores['foto'] : ''; ?></li>
-              </ul>
-            </div>
+          </div>-->
           <input type="submit" value="AGREGAR!">
         </form>
     </div>

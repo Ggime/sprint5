@@ -2,48 +2,97 @@
 
 @section('contenido')
 
-<h2><span>Actividades a participar</span></h2>
-
-  <div class="">
-  <form class="form-inline" action="#">
-      <div class="form-group">
-          <input name="q" type="search" class="form-control" placeholder="Buscar...">
-          <input type="submit" value="Buscar"></button>
-      </div>
-  </form>
-  </div>
   <br>
+  <div class="actividad">
+    <h2>Actividades a Participar</h2>
+<div class="paginate">
+      {{ $misActividades->links() }}
+</div>
+    @csrf
+
+      <table>
+        <tr>
+          <th>Actividad</th>
+          <th>Categoria</th>
+          <th>Barrio</th>
+          <th>Direccion</th>
+          <th>Respons.</th>
+          <th>Dia</th>
+          <th>Hs</th>
+          <th><img src="../img/time.png" height="18" width="18" alt="" title="Duracion en Minutos"></th>
+          <th>$</th>
+          <!--<th>Poster</th>-->
+          <th></th>
+        </tr>
+
       <ul>
         @foreach ($misActividades as $acti)
-        <div class="nombre">
-      {{$acti->actividad}}   {{ $acti->dia}}   {{$acti->hora}}
-           <img src="{{ \Storage::disk('public')->url($acti->ruta_imagen) }}">
-
-          <img src="../img/delete.png" height="18" width="18" alt="">
-        </div>
-        <br>
+        <tr>
+        <td>{{$acti->actividad}}</td>
+        <td>{{$acti->categoria->categoria}}</td>
+        <td>{{$acti->barrio->barrio}}</td>
+        <td>{{$acti->direccion}}</td>
+        <td>{{$acti->user->name}}</td>
+        <td>{{$acti->dia}}</td>
+        <td>{{$acti->hora}}</td>
+        <td>{{$acti->duracion}}</td>
+        <td>{{$acti->precio}}</td>
+        <!--<td><img src="{{ \Storage::disk('public')->url($acti->ruta_imagen) }}"></td>-->
+        <td><form action="/actividades/e/{{$acti->id}}" method="POST">
+          @csrf
+          {{method_field('DELETE') }}
+          <button class="button" type="submit" name="button" title="Eliminar"><b>X</b></button>
+        </form></td>
         @endforeach
       </ul>
-<h2>Actividades Registradas</h2>
-  <div class="nombre">
-    <br>
-        <ul>
+    </table>
+
+<br>
+
+    @csrf
+
+      <h2>Actividades Registradas</h2>
+      <div class="paginate">
+        {{ $actividades->links() }}
+      </div>
+      <table>
+        <tr>
+          <th>Actividad</th>
+          <th>Categoria</th>
+          <th>Barrio</th>
+          <th>Direccion</th>
+          <th>Dia</th>
+          <th>Hs</th>
+          <th><img src="../img/time.png" height="18" width="18" alt="" title="Duracion en Minutos"></th>
+          <th>$</th>
+          <!--<th>Poster</th>-->
+          <th></th>
+          <th></th>
+        </tr>
+
           @foreach ($actividades as $acti)
-          <div class="nombre">
-        {{$acti->actividad}}  {{ $acti->dia}}  {{$acti->hora}}
-             <img src="{{ \Storage::disk('public')->url($acti->ruta_imagen) }}">
-            <a href="/actividades/editar">
-              <img src="../img/editar.png" height="18" width="18" alt="">
-            </a>
-            <form action="/delete" method="POST">
+            <tr>
+            <td>{{$acti->actividad}}</td>
+            <td>{{$acti->categoria->categoria}}</td>
+            <td>{{$acti->barrio->barrio}}</td>
+            <td>{{$acti->direccion}}</td>
+            <td>{{$acti->dia}}</td>
+            <td>{{$acti->hora}}</td>
+            <td>{{$acti->duracion}}</td>
+            <td>{{$acti->precio}}</td>
+            <!--<td><img src="{{ \Storage::disk('public')->url($acti->ruta_imagen) }}"></td>-->
+            <td><a href="/actividades/editar/{{$acti->id}}">
+              <img src="../img/editar.png" alt="" title="Editar" class="editar">
+            </a></td>
+            <td><form action="/actividades/{{$acti->id}}" method="POST">
               @csrf
               {{method_field('DELETE') }}
-              <button type="submit" name="button">Eliminar</button>
-            </form>
-          </div>
-          <br>
+              <button class="button" type="submit" name="button" title="Eliminar"><b>X</b></button>
+            </form></td>
+            </tr>
           @endforeach
-        </ul>
-  </div>
+        </table>
+
+      </div>
 
 @endsection

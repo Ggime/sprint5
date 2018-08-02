@@ -104,16 +104,11 @@
                 <li>{{ $errors->has('descripcion')? $errors->first('descripcion') : ''}}</li>
              </ul>
           </div>
-          <div class="foto">
+        <!--  <div class="foto">
             <label for="name" >
-              <input type="file" name="foto" value="<?= isset($_FILES['foto']['tmp'])?$_FILES['foto']['tmp']:'';?>" title="Ingresa tu foto de perfil">
+              <input type="file" name="poster" value="">
             </label>
-          </div>
-          <div class="mens">
-            <ul>
-              <li><?=isset($errores['foto'])? $errores['foto'] : ''; ?></li>
-            </ul>
-          </div>
+          </div>-->
           <input type="submit" value="AGREGAR!">
         </form>
     </div>
