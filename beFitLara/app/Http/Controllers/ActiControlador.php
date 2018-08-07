@@ -10,8 +10,8 @@ use App\UsuariosActividad;
 class ActiControlador extends Controller
 {
     public function listar(){
-      $misActividades = \Auth::user()->actiParticipo()->paginate(2);
-      $actividades = Actividad::where('user_id', '=', \Auth::user()->id)->paginate(2);
+      $misActividades = \Auth::user()->actiParticipo()->paginate(4);
+      $actividades = Actividad::where('user_id', '=', \Auth::user()->id)->paginate(4);
       return
       view('actividades.listar')->with('actividades', $actividades)
           ->with('misActividades', $misActividades);
@@ -23,10 +23,10 @@ class ActiControlador extends Controller
       $categorias = Categoria::orderBy('categoria','ASC')->get();
 
       if(\Auth::guest()){
-        $actividades = Actividad::Paginate(5);
+        $actividades = Actividad::Paginate(7);
 
       }else{
-        $actividades = Actividad::where('user_id', '<>', \Auth::user()->id)->Paginate(5);
+        $actividades = Actividad::where('user_id', '<>', \Auth::user()->id)->Paginate(7);
       }
       return
       view('actividades.veracti')->with('actividades', $actividades);
@@ -153,10 +153,8 @@ class ActiControlador extends Controller
     $actividad = Actividad::find($id);
     $actividad->delete();
 
-    $misActividades = \Auth::user()->actiParticipo;
-    $actividades = Actividad::where('user_id', '=', \Auth::user()->id)->paginate(1);
-    return view('actividades.listar')->with('actividades', $actividades)
-        ->with('misActividades', $misActividades);
+
+    return redirect('/actividades/listar');
   }
 
   public function desuscribirse($id){
@@ -165,8 +163,7 @@ class ActiControlador extends Controller
 
    $misActividades = \Auth::user()->actiParticipo;
    $actividades = Actividad::where('user_id', '=', \Auth::user()->id)->paginate(5);
-   return view('actividades.listar')->with('actividades', $actividades)
-       ->with('misActividades', $misActividades);
+     return redirect('/actividades/listar');
  }
 
   public function anotarme(Request $request){
@@ -175,8 +172,7 @@ class ActiControlador extends Controller
           'actividad_id' => $request->input('anotarme')]);
           $misActividades = \Auth::user()->actiParticipo;
           $actividades = Actividad::where('user_id', '=', \Auth::user()->id)->paginate(5);
-          return view('actividades.listar')->with('actividades', $actividades)
-              ->with('misActividades', $misActividades);
+          return redirect('/actividades/listar');
         }
 
 

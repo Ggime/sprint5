@@ -22,7 +22,7 @@ class AgregarActividad extends Migration
         $table->integer('duracion')->nullable();
         $table->string('descripcion', '250');
         $table->string('precio','50');
-        $table->string('poster','150')->nullable();
+        $table->string('ruta_imagen','150')->nullable();
         $table->timestamps();
       });
 

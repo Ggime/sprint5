@@ -84,12 +84,6 @@
               <li>{{ $errors->has('rpass')? $errors->first('rpass') : ''}}</li>
            </ul>
          </div>
-         <div class="oki">
-          <label class="ok">
-            <input type="checkbox" name="newsletter" value="newsletter"> Quiero recibir novedades de FIT<br>
-            <span class="checkmark"></span>
-          </label>
-         </div>
         <input type="submit" value="SUMATE!">
       </form>
   </div>
