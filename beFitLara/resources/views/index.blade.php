@@ -26,20 +26,20 @@
      <div class="slideshow-container">
         <div class="mySlides fade">
           <div class="numbertext">1 / 3</div>
-            <img src="img/dep2.png" style="width:100%">
-          <div class="text">Gimnasia</div>
+            <img src="img/sport.png" style="width:100%">
+          <div class="text">Running</div>
         </div>
 
         <div class="mySlides fade">
           <div class="numbertext">2 / 3</div>
-          <img src="img/depor.png" style="width:100%">
-          <div class="text">Funcional</div>
+          <img src="img/sport2.png" style="width:100%">
+          <div class="text">Yoga</div>
         </div>
 
         <div class="mySlides fade">
           <div class="numbertext">3 / 3</div>
-          <img src="img/depor0.png" style="width:100%">
-          <div class="text">Varios</div>
+          <img src="img/sporta.png" style="width:100%">
+          <div class="text">Gimnasia</div>
         </div>
 
         <a class="prev">&#10094;</a>
@@ -72,4 +72,7 @@
 
 @section('scripts')
   <script src="/js/bafit.js" charset="utf-8"></script>
+  <script src="/js/headuser.js" charset="utf-8"></script>
+  <script src="/js/swich.js" charset="utf-8"></script>
+
 @endsection

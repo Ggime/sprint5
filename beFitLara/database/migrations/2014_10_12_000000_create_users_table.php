@@ -21,7 +21,7 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->string('edad');
             $table->integer('barrio_id')->index();
-            //$table->string('avatar','150');
+            $table->string('avatar','300');
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();

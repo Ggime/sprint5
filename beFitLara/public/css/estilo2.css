@@ -502,7 +502,6 @@ section .ingresar{
 }
 
 .ingresar input[type=text] {
-   width: 49%;
    padding: 12px 20px;
    margin: 1vh 0vw;
    display: inline-block;
@@ -512,7 +511,6 @@ section .ingresar{
 }
 
 .ingresar input[type=password] {
-   width: 49%;
    padding: 12px 20px;
    margin: 1vh 0vw;
    display: inline-block;
@@ -583,6 +581,11 @@ section .regis{
    color: black;
    margin: 25px 0px;
    font-weight: bold;
+}
+
+.error{
+  color:red;
+  font-size: 10px;
 }
 
 hr {
@@ -749,8 +752,10 @@ section .ingresar1{
 }
 
 .nombre{
-  width: 100%;
+  width: 50%;
   margin-left: 0px;
+  position: relative;
+  float: left;
 }
 
 .dias{

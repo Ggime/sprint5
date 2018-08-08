@@ -31,6 +31,7 @@
              @csrf
              &nbsp; <a href="/faq" class="fijo">AYUDA</a>
                <input class="button2" type="submit" value="SALIR">
+               <a href="#">Hola {{\Auth::user()->name}}!</a><img src="{{\Auth::user()->ruta_imagen}}" alt="">
                <div class="act-contenedor">
                 &nbsp; <label class="ul-label" for="ul">ACTIVIDADES+<a href="#" class="actividades"></a></label>
                   <input type="checkbox" class="dar-klik" id="ul">

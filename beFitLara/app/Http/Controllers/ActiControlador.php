@@ -75,7 +75,7 @@ class ActiControlador extends Controller
      $ruta_imagen='';
      if($request->file('poster')){
      $ruta_imagen= $request->file('poster')->store('poster','public');
-     }
+   }
 
 
      $actividades = Actividad::create(

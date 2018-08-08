@@ -182,6 +182,55 @@ footer{
    font-size: 14px;
 }
 
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 30px;
+}
+
+.switch input {display:none;}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #6D6F71;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 22px;
+  width: 20px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #00DFAA;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #00DFAA;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
 /* INDEX */
 
 section .articulo1{
@@ -222,10 +271,11 @@ section .info{
 
 /* Slideshow container */
 .slideshow-container {
-  max-width: 300px;
+  max-width: 430px;
   position: relative;
   margin: auto;
   float: left;
+  margin-left: 10%;
 }
 
 /* Next & previous buttons */
@@ -394,8 +444,7 @@ section .info{
 }
 
 section .ingresar{
-   border: 2px solid #4E9184;
-   width: 40%;
+   border: 2px solid #9C434F;
    margin: 5%;
    margin-left: 10%;
    background-color: #fff;
@@ -410,7 +459,7 @@ section .ingresar{
    text-align: left;
    display:block;
    font-size: 15px;
-   color: #489185;
+   color: #9C434F;
    margin-bottom: 18px;
 }
 
@@ -426,13 +475,14 @@ section .ingresar{
 .ingresar select {
    width: 100%;
    height: 40px;
-   padding: 6px 20px;
+   padding: 6px 22px;
    margin: 1vh 0vw;
    display: inline-block;
    border: 1px solid #ccc;
    border-radius: 4px;
    box-sizing: border-box;
 }
+
 
 .nombre{
   width: 100%;
@@ -482,7 +532,6 @@ section .ingresar{
   font-size: 11px;
   list-style-type: none;
 }
-
 .foto{
   width: 100%;
     height: 40px;
@@ -497,13 +546,13 @@ section .ingresar{
     margin: 3px 0px;
 }
 
+
 .selectores{
   width: 100%;
   margin-left: 0px;
 }
 
 .ingresar input[type=text] {
-   width: 49%;
    padding: 12px 20px;
    margin: 1vh 0vw;
    display: inline-block;
@@ -513,7 +562,6 @@ section .ingresar{
 }
 
 .ingresar input[type=password] {
-   width: 49%;
    padding: 12px 20px;
    margin: 1vh 0vw;
    display: inline-block;
@@ -524,7 +572,7 @@ section .ingresar{
 
 .ingresar input[type=submit] {
    width: 100%;
-   background-color: #4E9184;
+   background-color: #9C434F;
    color: white;
    padding: 14px 20px;
    margin-left: 0px;
@@ -535,7 +583,7 @@ section .ingresar{
 }
 
 .ingresar input[type=submit]:hover {
-   background-color: #5CAD9D;
+   background-color: #E15E65;
 }
 
 .ingresar .face{
@@ -561,7 +609,7 @@ section .ingresar{
 
 section .regis{
    width: 45%;
-   margin-top: 5%;
+   margin-top: 2%;
    border-radius: 15px;
    float: left;
 }
@@ -584,6 +632,11 @@ section .regis{
    color: black;
    margin: 25px 0px;
    font-weight: bold;
+}
+
+.error{
+  color:red;
+  font-size: 10px;
 }
 
 hr {
@@ -750,9 +803,12 @@ section .ingresar1{
 }
 
 .nombre{
-  width: 100%;
+  width: 50%;
   margin-left: 0px;
+  position: relative;
+  float: left;
 }
+
 
 .dias{
   width: 100%;
@@ -800,7 +856,6 @@ border-style: border;
 }
 
 .foto{
-  width: 98%;
   height: 40px;
   padding: 10px 12px;
   font-size: 14px;
@@ -846,7 +901,7 @@ border-style: border;
 
 section .regis{
    width: 29%;
-   margin-top: 5%;
+   margin-top: 3%;
    border-radius: 15px;
    float: left;
 }
@@ -1132,33 +1187,37 @@ section .info {
   }
 
 /*Iniciar Sesion */
-
 section .ingresar{
-   border: 2px solid #4E9184;
-   width: 55%;
-   margin: 5%;
-   background-color: #fff;
-   border-radius: 15px;
-   padding: 30px 10px;
-   float: left;
-   display: inline-block;
+   margin-left: 5%;
+ }
+
+ section .regis{
+    width: 25%;
+    border-radius: 15px;
+    float: left;
+    margin-top: 5%;
   }
 
-section .regis{
-   width: 25%;
-   margin: 5%;
-   border-radius: 15px;
-   float: left;
- }
+ .img_depor{
+    display: none;
+  }
 
-.img_depor{
-   display: none;
- }
+ .img_depor1{
+    display: block;
+    width: 100%;
+  }
 
-.img_depor1{
-   display: block;
-   width: 100%;
- }
+  .regis p{
+     padding-left: 20px;
+     font-size: 16px;
+     margin: 5px 0px;
+  }
+
+  .regis p.imp{
+     padding-left: 20px;
+     font-size: 16px;
+     margin: 5px 0px;
+  }
 
  /*Preguntas Frecuentes*/
 
@@ -1373,34 +1432,47 @@ form{
   }
 
 /*Iniciar Sesion */
-
-section .ingresar{
-   margin: 10% 15% 5% 15%;
-   display: inline-block;
-   width: 70%
- }
-
 section .regis{
    width: 70%;
+   border-radius: 15px;
    margin: 5% 15%;
  }
+
+ section .ingresar {
+    width: 85%;
+    margin: 4% 8%;
+}
 
 .img_depor{
    display: block;
    width: 100%;
+
  }
 
 .img_depor1{
    display: none;
  }
 
-.ingresar input[type=text], select {
+ .nombre{
    width: 100%;
+   margin-left: 0px;
+   float:none;
+ }
+
+ .ingresar input[type=text] {
+    width: 100%;
  }
 
  .ingresar input[type=password] {
     width: 100%;
  }
+
+ .ingresar select {
+    width: 100%;
+ }
+
+
+
 
  .mensajes2 li{
    display: inline-block;

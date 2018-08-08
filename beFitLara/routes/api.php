@@ -13,7 +13,7 @@ use Illuminate\Http\Request;
 |
 */
 
-
+Route::get('/cantidadUsuarios', 'Api\ApiActiController@cantUsuarios');
 
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {

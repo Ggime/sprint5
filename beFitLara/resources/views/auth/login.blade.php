@@ -14,14 +14,17 @@
 
         </div>
         <br>
-
+        <div class="">
         <div class="nombre">
           <label for="">
             <input type="text" id="" name="email" placeholder="Tu Email" value="">
           </label>
+          </div>
+          <div class="nombre">
           <label for="" class="pass">
             <input type="password" id="" name="password" placeholder="Contraseña" value="">
           </label>
+        </div>
         </div>
         <div class="mensajes">
             <ul>

@@ -7,6 +7,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Http\Request;
 
 class RegisterController extends Controller
 {
@@ -17,7 +19,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = 'auth/login';
+    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.
@@ -37,27 +39,29 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
+      $mensajes = [
+        'name.required' => 'Ingresa tu Nombre',
+        'apellido.required' => 'Ingresa tu Apellido',
+        'telefono.required' => 'Ingresa tu Telefono',
+        'telefono.numeric' => 'Debe ser numerico',
+        'email.required' => 'Ingresa tu Email',
+        'email.unique' => 'El email ya esta regitrado',
+        'avatar' => 'Formato invalido',
+        'edad.required' => 'Ingresa tu Edad',
+        'password.required' => 'Ingresa tu clave'
+      ];
         return Validator::make($data, [
             'name' => 'required|string|max:255',
             'apellido' => 'required|string|max:255',
-            'telefono'=> 'required|string|max:255',
+            'telefono'=> 'required|numeric',
             'email' => 'required|string|email|max:255|unique:users',
             'edad' => 'required|string|max:15',
             'barrio_id' => 'nullable',
+            'avatar' => 'image',
             'password' => 'required|string|min:6|confirmed',
-            //'avatar' => 'nullable|string|max:255',
-        ]);
 
-        $mensajes = [
-          'name.required' => 'Ingresa tu Nombre',
-          'apellido.required' => 'Ingresa tu Apellido',
-          'telefono.required' => 'Ingresa tu Telefono',
-          'email.required' => 'Ingresa tu Email',
-          'edad.required' => 'Ingresa tu Edad',
-          'password.required' => 'Ingresa tu clave',
-        ];
-    }
-
+     ], $mensajes);
+   }
     /**
      * Create a new user instance after a valid registration.
      *
@@ -66,6 +70,11 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+      $ruta='';
+      if(isset($data['avatar'])){
+        $ruta = $data['avatar']->store('avatars', 'public');
+      }
+
         return User::create([
             'name' => $data['name'],
             'apellido' => $data['apellido'],
@@ -74,7 +83,8 @@ class RegisterController extends Controller
             'edad' => $data['edad'],
             'barrio_id' => $data['barrio_id'],
             'password' => Hash::make($data['password']),
-            //'avatar' => $data['avatar'],
+            'ruta_imagen' => $ruta,
         ]);
     }
+
 }

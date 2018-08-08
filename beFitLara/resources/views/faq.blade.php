@@ -59,4 +59,5 @@
       <input id="boton" type="button" name="manda" value="Enviar" placeholder="Enviar">
     </div>
     </section>
+      <script src="/js/headuser.js" charset="utf-8"></script>
 @endsection

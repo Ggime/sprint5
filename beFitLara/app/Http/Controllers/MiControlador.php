@@ -17,9 +17,6 @@ class MiControlador extends Controller
       ->with ('barrios', $barrios);
     }
 
-
-
-
     public function login(){
       return view('login');
     }
