@@ -34,6 +34,7 @@ form.onsubmit = function (ev) {
     theInputs[9].value.trim() === ''  )
      {
     ev.preventDefault();
+    window.alert('Completa todos los campos');
   }
 };
 

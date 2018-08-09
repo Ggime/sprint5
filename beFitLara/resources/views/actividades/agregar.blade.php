@@ -123,14 +123,14 @@
   </div>
   <div class="regis">
         <br>
-      <p>Registrándote en Be-Fit! vas a poder recibir en tu correo lo mejor de la Agenda cada semana!</p>
+      <p>Agrega tu actividad y forma tu propio grupo de entrenamiento!</p>
         <hr>
         <br>
-      <p class="imp">Además podés guardar Eventos Favoritos y Subir Actividades!</p>
+      <p class="imp">Siempre hay alguien buscando nuevos desafios</p>
         <br>
         <hr>
         <br>
-      <p>No te quedes afuera, en 1 simple paso podés ser parte de esta comunidad.</p>
+      <p>Con un simple paso registra tu actividad</p>
   </div>
   </section>
   <script src="/js/acti.js" charset="utf-8"></script>

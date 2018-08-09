@@ -122,7 +122,7 @@ class ActiControlador extends Controller
      ];
      $this->validate(
        $request, [
-       'actividad' =>'required|unique:actividades,actividad,'.$id,
+       'actividad' =>'required:actividades,actividad,'.$id,
        'categoria_id' => 'required',
        'barrio_id' => 'required',
        'direccion' => 'required',

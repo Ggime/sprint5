@@ -75,7 +75,12 @@ telefono.addEventListener('blur', function(){
 			 telefono.classList.add('is-invalid');
 			 telefono.parentNode.querySelector('div').classList.add('error');
 			 telefono.parentNode.querySelector('div').innerHTML = 'El telefono tiene que ser numerico';
-		 } else {
+		 } else if (telefono.value == '') {
+			 telefono.classList.add('is-invalid');
+ 			telefono.parentNode.querySelector('div').classList.add('error');
+ 			telefono.parentNode.querySelector('div').innerHTML = 'Ingresa tu telefono';
+		 }
+		 else {
 			 telefono.classList.remove('is-invalid');
 			 telefono.parentNode.querySelector('div').classList.remove('error');
 			 telefono.parentNode.querySelector('div').innerHTML = '';
@@ -114,7 +119,7 @@ telefono.addEventListener('blur', function(){
 		) {
 			this.submit()
 		} else {
-      	
+window.alert('Completa todos los campos');
     }
 	};
 
