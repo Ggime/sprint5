@@ -172,6 +172,10 @@ header .completo{
   border: none;
 }
 
+.button2:hover{
+  color: #00DFAF;
+}
+
 footer{
    width: 10  0%;
    background-color: #9C434F;
@@ -231,6 +235,12 @@ input:checked + .slider:before {
   transform: translateX(26px);
 }
 
+.cantidad_usuarios a{
+  color: #00DFB3;
+  font-style: oblique;
+  font-weight: bold;
+}
+
 /* INDEX */
 
 section .articulo1{
@@ -271,11 +281,12 @@ section .info{
 
 /* Slideshow container */
 .slideshow-container {
-  max-width: 430px;
+  max-width: 35%;
   position: relative;
   margin: auto;
   float: left;
   margin-left: 10%;
+  margin-top: 5%;
 }
 
 /* Next & previous buttons */
@@ -286,7 +297,7 @@ section .info{
   width: auto;
   padding: 16px;
   margin-top: -22px;
-  color: red;
+  color: black;
   font-weight: bold;
   font-size: 18px;
   transition: 0.6s ease;
@@ -301,12 +312,12 @@ section .info{
 
 /* On hover, add a black background color with a little bit see-through */
 .prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
+  background-color: #00DFAF;
 }
 
 /* Caption text */
 .text {
-  color: red;
+  color: black;
   font-size: 15px;
   padding: 8px 12px;
   position: absolute;
@@ -1022,6 +1033,13 @@ th {
   display: inline-block;
 }
 
+.control input{
+  background-color:#F2F2F2;
+  padding: 0.5%;
+  border-radius: 5px;
+  border: 1px solid #00DFAF;
+}
+
 @media (max-width:900px) {
 .general{
     margin: 0 auto;
@@ -1186,6 +1204,10 @@ section .info {
   color: black;
   }
 
+  .slideshow-container {
+    max-width: 50%;
+    margin-left: 20%;
+  }
 /*Iniciar Sesion */
 section .ingresar{
    margin-left: 5%;
@@ -1258,7 +1280,7 @@ section .ingresar{
 
 .actividad th, td {
     text-align: left;
-    padding: 2px;
+    padding: 5px;
     font-size: 13px;
 }
 
@@ -1403,6 +1425,11 @@ form{
  .articulo2 .deportes1 .imagen6 img{
    display: none;
  }
+
+ .slideshow-container {
+   max-width: 70%;
+   margin-left: 15%;
+ }
  /* Seccion Recomendados */
 
   .articulo2 .deportes .imagenT img{
@@ -1541,7 +1568,7 @@ section .regis{
 
   .actividad th, td {
       text-align: left;
-      padding: 1px;
+      padding: 3px;
       font-size: 8px;
   }
 

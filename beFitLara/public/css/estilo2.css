@@ -2,9 +2,9 @@
    margin:0;
    padding: 0;
    box-sizing: border-box;}
-
-.mySlides {display: none}
+   .mySlides {display: none}
 img {vertical-align: middle;}
+
 
 body{
    font-family: sans-serif;
@@ -33,11 +33,12 @@ header .completo{
    box-sizing: border-box;
    margin: 0px auto;
 }
+
 .encabezado{
    background-color: #00DFAA;
    border-radius: 0.1%;
    padding-top: 10px;
-   color:  #FFFFFF;
+   color:  black;
    position: relative;
    width: 100%;
 }
@@ -86,12 +87,12 @@ header .completo{
 }
 
 .inicio a{
-   color: white;
+   color: black;
    padding: 0.5vw;
 }
 
 .inicio a:hover {
-   color: black;
+   color: #9A4550;
 }
 
 .inicio  .actividades {
@@ -146,7 +147,7 @@ header .completo{
 }*/
 
 .menu .menu-izq{
-   background-color: #E6E6E6;
+   background-color: #A9ABAE;
    font-size:1rem;
    padding: 10px;
    display: inline-block;
@@ -161,14 +162,18 @@ header .completo{
 }
 
 .menu a:hover {
-   color: #01DFA5;
+   color: #9A4550;
 }
 
 .button2{
   color: white;
   font-size: 13px;
-  background-color: #9C434F;
+  background-color: #00DFAF;
   border: none;
+}
+
+.button2:hover{
+  color: #9A4550;
 }
 
 footer{
@@ -179,6 +184,61 @@ footer{
    color: black;
    clear: both;
    font-size: 14px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 30px;
+}
+
+.switch input {display:none;}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #6D6F71;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 22px;
+  width: 20px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #9F424F;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #9F424F;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+.cantidad_usuarios a{
+  color: #9F424F;
+  font-style: oblique;
+  font-weight: bold;
 }
 
 /* INDEX */
@@ -214,18 +274,21 @@ section .info{
    display: inline-block;
    width: 100%;
    text-align: justify;
-   background-color: #E6E6E6;
+   background-color: #A9ABAE;
    padding: 2% 10%;
-   color: black;
+   color: white;
 }
 
 /* Slideshow container */
 .slideshow-container {
-  max-width: 300px;
+  max-width: 35%;
   position: relative;
   margin: auto;
   float: left;
+  margin-left: 10%;
+  margin-top: 5%;
 }
+
 
 /* Next & previous buttons */
 .prev, .next {
@@ -235,7 +298,7 @@ section .info{
   width: auto;
   padding: 16px;
   margin-top: -22px;
-  color: red;
+  color: black;
   font-weight: bold;
   font-size: 18px;
   transition: 0.6s ease;
@@ -250,12 +313,12 @@ section .info{
 
 /* On hover, add a black background color with a little bit see-through */
 .prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
+  background-color: #a85560;
 }
 
 /* Caption text */
 .text {
-  color: red;
+  color: black;
   font-size: 15px;
   padding: 8px 12px;
   position: absolute;
@@ -393,8 +456,7 @@ section .info{
 }
 
 section .ingresar{
-   border: 2px solid #4E9184;
-   width: 40%;
+   border: 2px solid #06ad8c;
    margin: 5%;
    margin-left: 10%;
    background-color: #fff;
@@ -409,7 +471,7 @@ section .ingresar{
    text-align: left;
    display:block;
    font-size: 15px;
-   color: #489185;
+   color: #06ad8c;
    margin-bottom: 18px;
 }
 
@@ -425,13 +487,14 @@ section .ingresar{
 .ingresar select {
    width: 100%;
    height: 40px;
-   padding: 6px 20px;
+   padding: 6px 22px;
    margin: 1vh 0vw;
    display: inline-block;
    border: 1px solid #ccc;
    border-radius: 4px;
    box-sizing: border-box;
 }
+
 
 .nombre{
   width: 100%;
@@ -481,7 +544,6 @@ section .ingresar{
   font-size: 11px;
   list-style-type: none;
 }
-
 .foto{
   width: 100%;
     height: 40px;
@@ -495,6 +557,7 @@ section .ingresar{
     border-radius: 4px;
     margin: 3px 0px;
 }
+
 
 .selectores{
   width: 100%;
@@ -521,7 +584,7 @@ section .ingresar{
 
 .ingresar input[type=submit] {
    width: 100%;
-   background-color: #4E9184;
+   background-color: #00DFB3;
    color: white;
    padding: 14px 20px;
    margin-left: 0px;
@@ -532,7 +595,7 @@ section .ingresar{
 }
 
 .ingresar input[type=submit]:hover {
-   background-color: #5CAD9D;
+   background-color: #06ad8c;
 }
 
 .ingresar .face{
@@ -558,7 +621,7 @@ section .ingresar{
 
 section .regis{
    width: 45%;
-   margin-top: 5%;
+   margin-top: 2%;
    border-radius: 15px;
    float: left;
 }
@@ -625,7 +688,7 @@ hr {
 .preguntas{
    /*box-shadow: 4px 4px 4px #585858;*/
    height: 50px;
-   background: rgba(1, 223, 165, 0.7);
+   background: rgba(156, 67, 79, 0.9);
    margin: 0 auto;
    width: 85%;
    display: block;
@@ -636,10 +699,10 @@ hr {
 .preguntas h3{
    text-align: center;
    font-size: 20px;
-   color: #585858;
+   color: black;
 }
 .preguntas h3:hover{
-   color: #4E9184;
+   color: #773e45;
 }
 
 .respuestas{
@@ -804,7 +867,6 @@ border-style: border;
 }
 
 .foto{
-  width: 98%;
   height: 40px;
   padding: 10px 12px;
   font-size: 14px;
@@ -850,7 +912,7 @@ border-style: border;
 
 section .regis{
    width: 29%;
-   margin-top: 5%;
+   margin-top: 3%;
    border-radius: 15px;
    float: left;
 }
@@ -901,7 +963,7 @@ th, td {
 tr:nth-child(even){background-color: #f2f2f2}
 
 th {
-    background-color: #00DFAA;
+    background-color: #9C434F;
     color: white;
 }
 
@@ -969,6 +1031,13 @@ th {
   font-size: 15px;
   background-color: white;
   display: inline-block;
+}
+
+.control input{
+  background-color:#F2F2F2;
+  padding: 0.5%;
+  border-radius: 5px;
+  border: 1px solid #00DFAF;
 }
 
 @media (max-width:900px) {
@@ -1135,34 +1204,43 @@ section .info {
   color: black;
   }
 
-/*Iniciar Sesion */
-
-section .ingresar{
-   border: 2px solid #4E9184;
-   width: 55%;
-   margin: 5%;
-   background-color: #fff;
-   border-radius: 15px;
-   padding: 30px 10px;
-   float: left;
-   display: inline-block;
+  .slideshow-container {
+    max-width: 50%;
+    margin-left: 20%;
   }
 
-section .regis{
-   width: 25%;
-   margin: 5%;
-   border-radius: 15px;
-   float: left;
+/*Iniciar Sesion */
+section .ingresar{
+   margin-left: 5%;
  }
 
-.img_depor{
-   display: none;
- }
+ section .regis{
+    width: 25%;
+    border-radius: 15px;
+    float: left;
+    margin-top: 5%;
+  }
 
-.img_depor1{
-   display: block;
-   width: 100%;
- }
+ .img_depor{
+    display: none;
+  }
+
+ .img_depor1{
+    display: block;
+    width: 100%;
+  }
+
+  .regis p{
+     padding-left: 20px;
+     font-size: 16px;
+     margin: 5px 0px;
+  }
+
+  .regis p.imp{
+     padding-left: 20px;
+     font-size: 16px;
+     margin: 5px 0px;
+  }
 
  /*Preguntas Frecuentes*/
 
@@ -1203,7 +1281,7 @@ section .regis{
 
 .actividad th, td {
     text-align: left;
-    padding: 2px;
+    padding: 5px;
     font-size: 13px;
 }
 
@@ -1376,35 +1454,53 @@ form{
     margin: 2% 15%;
   }
 
+  .slideshow-container {
+    max-width: 70%;
+    margin-left: 15%;
+  }
+
 /*Iniciar Sesion */
-
-section .ingresar{
-   margin: 10% 15% 5% 15%;
-   display: inline-block;
-   width: 70%
- }
-
 section .regis{
    width: 70%;
+   border-radius: 15px;
    margin: 5% 15%;
  }
+
+ section .ingresar {
+    width: 85%;
+    margin: 4% 8%;
+}
 
 .img_depor{
    display: block;
    width: 100%;
+
  }
 
 .img_depor1{
    display: none;
  }
 
-.ingresar input[type=text], select {
+ .nombre{
    width: 100%;
+   margin-left: 0px;
+   float:none;
+ }
+
+ .ingresar input[type=text] {
+    width: 100%;
  }
 
  .ingresar input[type=password] {
     width: 100%;
  }
+
+ .ingresar select {
+    width: 100%;
+ }
+
+
+
 
  .mensajes2 li{
    display: inline-block;
@@ -1473,7 +1569,7 @@ section .regis{
 
   .actividad th, td {
       text-align: left;
-      padding: 1px;
+      padding: 3px;
       font-size: 8px;
   }
 
