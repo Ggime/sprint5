@@ -4,7 +4,7 @@
 
 <section class="iniciar">
   <div class="ingresar">
-      <form method="post" action="{{route('login')}}" enctype="multipart/form-data">
+      <form action="{{route('login')}}" id="login" method="post" enctype="multipart/form-data">
         @csrf
 
         <p>BIENVENIDO A LA COMUNIDAD BE-FIT!
@@ -18,11 +18,13 @@
         <div class="nombre">
           <label for="">
             <input type="text" id="" name="email" placeholder="Tu Email" value="">
+            <div class=""></div>
           </label>
           </div>
           <div class="nombre">
           <label for="" class="pass">
             <input type="password" id="" name="password" placeholder="Contraseña" value="">
+            <div class=""></div>
           </label>
         </div>
         </div>
@@ -33,7 +35,7 @@
            </ul>
         </div>
          <div class="recor">
-           <p><a href="registro_responsive.php">¿Olvidaste tu contrasena?</a>¿No sos usuario? <a href="registro_responsive.php">Registrate!</a></p>
+           <p><a href="registro_responsive.php">¿Olvidaste tu contrasena?</a>¿No sos usuario? <a href="/registro">Registrate!</a></p>
          </div>
 
         <div class="oki">
@@ -56,4 +58,7 @@
       <p>No te quedes afuera, en 1 simple paso podés ser parte de esta comunidad.</p>
   </div>
 </section>
+
+<script src="/js/login.js" charset="utf-8"></script>
+<script src="/js/headuser.js" charset="utf-8"></script>
 @endsection

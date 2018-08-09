@@ -32,6 +32,7 @@ header .completo{
    z-index: 10;
    box-sizing: border-box;
    margin: 0px auto;
+
 }
 
 .encabezado{
@@ -41,6 +42,8 @@ header .completo{
    color:  black;
    position: relative;
    width: 100%;
+   position: fixed;
+   z-index: 50;
 }
 
 .logo{
@@ -166,7 +169,7 @@ header .completo{
 }
 
 .button2{
-  color: white;
+  color: black;
   font-size: 13px;
   background-color: #00DFAF;
   border: none;
@@ -254,6 +257,7 @@ section .sport {
    float: left;
    display: inline-block;
    width: 100%;
+   margin-top: 100px;
 }
 
 section .sport1 img{
@@ -453,6 +457,7 @@ section .info{
 
 .iniciar{
     width: 100%;
+    margin-top: 100px;
 }
 
 section .ingresar{
@@ -717,6 +722,10 @@ hr {
 
 .preyres{
    margin-bottom: 15px;
+}
+
+.faq{
+  margin-top: 80px;
 }
 
 .dar-clic{display: none;}
@@ -1048,7 +1057,7 @@ th {
 .encabezado{
     border-radius: 1px;
     padding-top: 15px;
-    position: relative;
+    position: fixed;
   }
 
 .busqueda {
@@ -1143,10 +1152,13 @@ th {
  }
 
 .button2{
-  color: white;
   font-size: 13px;
   background-color: #6D6F71;
   border: none;
+}
+
+section .sport{
+  margin-top: 100px;
 }
 
 /* Seccion Bienvenidos */
@@ -1154,10 +1166,6 @@ th {
 /*section .articulo1{
    margin-top:3vh;
 }
-
-section .sport {
-   display: none
- }
 
 section .sport img{
    display: none;
@@ -1261,9 +1269,11 @@ section .ingresar{
 }
 
 /*Pantalla actividades y tus actividades*/
-
+.listas{
+  margin-top: 150px;
+}
 .actividad {
-  margin: 35px 20px;
+  margin: 80px 20px 35px 20px;
 }
 
 .actividad h2{
@@ -1323,7 +1333,7 @@ section .ingresar{
 .encabezado{
    border-radius: 1px;
    padding-top: 15px;
-   position: relative;
+   position: fixed;
   }
 
 .busqueda {
@@ -1399,6 +1409,9 @@ form{
  }
 
  /* INDEX */
+ section .sport{
+   margin-top: 100px;
+ }
 
  section .sport1 img{
      margin:10% 20%;

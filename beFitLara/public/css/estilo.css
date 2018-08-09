@@ -39,8 +39,9 @@ header .completo{
    border-radius: 0.1%;
    padding-top: 10px;
    color:  #FFFFFF;
-   position: relative;
+   position: fixed;
    width: 100%;
+   z-index: 50;
 }
 
 .logo{
@@ -177,7 +178,7 @@ header .completo{
 }
 
 footer{
-   width: 10  0%;
+   width: 100%;
    background-color: #9C434F;
    text-align: center;
    padding: 2%;
@@ -254,6 +255,7 @@ section .sport {
    float: left;
    display: inline-block;
    width: 100%;
+   margin-top: 100px;
 }
 
 section .sport1 img{
@@ -452,6 +454,7 @@ section .info{
 
 .iniciar{
     width: 100%;
+    margin-top: 120px;
 }
 
 section .ingresar{
@@ -673,7 +676,7 @@ hr {
 /*Preguntas Frecuentes*/
 .cabeza{
    display: block;
-   margin: 15px 20px;
+   margin: 100px 20px 15px 20px;
 }
 
 .cabeza  h2{
@@ -944,7 +947,9 @@ hr {
 }
 
 /*Pantalla actividades y tus actividades*/
-
+.listas{
+  margin-top: 150px;
+}
 .actividad h2{
   margin-left: 5%;
   color: #489185;
@@ -1048,7 +1053,8 @@ th {
 .encabezado{
     border-radius: 1px;
     padding-top: 15px;
-    position: relative;
+    position: fixed;
+    z-index: 50;
   }
 
 .busqueda {
@@ -1151,6 +1157,9 @@ th {
 
 /* Seccion Bienvenidos */
 
+section .sport{
+  margin-top: 100px;
+}
 /*section .articulo1{
    margin-top:3vh;
 }
@@ -1242,6 +1251,10 @@ section .ingresar{
   }
 
  /*Preguntas Frecuentes*/
+ .cabeza{
+    display: block;
+    margin: 100px 20px 15px 20px;
+ }
 
 .cabeza  h2{
    text-align: center;
@@ -1260,9 +1273,12 @@ section .ingresar{
 }
 
 /*Pantalla actividades y tus actividades*/
+.listas{
+  margin-top: 120px;
+}
 
 .actividad {
-  margin: 35px 20px;
+  margin: 80px 20px 35px 20px;
 }
 
 .actividad h2{
@@ -1322,7 +1338,8 @@ section .ingresar{
 .encabezado{
    border-radius: 1px;
    padding-top: 15px;
-   position: relative;
+   position: fixed;
+   z-index: 50;
   }
 
 .busqueda {
@@ -1524,6 +1541,11 @@ section .regis{
  }
 
 /*Preguntas Frecuentes*/
+.cabeza{
+   display: block;
+   margin: 100px 20px 15px 20px;
+}
+
 .cabeza  h2{
    text-align: center;
    display: inline-block;

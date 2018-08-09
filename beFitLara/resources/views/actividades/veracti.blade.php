@@ -2,6 +2,8 @@
 
 @section('contenido')
 <div class="actividad"><br>
+
+<br><br><br>
 <h2><span>Actividades Disponibles</span></h2><br>
     <div class="control">
       <form action="#" >
@@ -47,11 +49,14 @@
         @endforeach
 
       </table>
+
     </form>
     <div class="paginate">
       {{ $actividades->links() }}
     </div>
   </div>
+
+
   <script src="/js/headuser.js" charset="utf-8"></script>
 
 @endsection

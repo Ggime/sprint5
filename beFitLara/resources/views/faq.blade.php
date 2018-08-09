@@ -5,7 +5,7 @@
 <div class="cabeza">
       <h2><a id="top">Preguntas Frecuentes</a></h2>
   </div>
- <section>
+ <section class="faq">
         <div class="preyres">
           <div class="preguntas">
             <h3><label for="primero">¿Qué és Be-Fit!?</label></h3>

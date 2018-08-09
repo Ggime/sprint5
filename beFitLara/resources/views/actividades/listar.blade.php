@@ -4,6 +4,7 @@
 
   <br>
   <div class="actividad">
+    <div class="listas">  
     <h2>Actividades a Participar</h2>
 <div class="paginate">
       {{ $misActividades->links() }}
@@ -92,7 +93,7 @@
             </tr>
           @endforeach
         </table>
-
+</div>
       </div>
 
 @endsection
