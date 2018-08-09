@@ -8,7 +8,7 @@
  <section class="faq">
         <div class="preyres">
           <div class="preguntas">
-            <h3><label for="primero">¿Qué és Be-Fit!?</label></h3>
+            <h3><label for="primero">¿Qué és Ba-Fit!?</label></h3>
           </div>
           <input type="checkbox" class="dar-clic" id="primero">
           <div class="respuestas">
@@ -21,7 +21,7 @@
           </div>
           <input type="checkbox" class="dar-clic" id="segundo">
           <div class="respuestas">
-            <p>Al registrarte te sumas a la comunidad Be-Fit, donde podrás marcar tus actividades favoritas y de esta manera podemos personalizar la página a tus gustos particulares. También vas a poder agendar las actividades y sesiones en el calendario, facilitando tu organización diaria. También vas a poder optar por recibir mensajes vía e-mail, sms o Whatsapp con recordatorios sobre sesiones que hayas reservado</p>
+            <p>Al registrarte te sumas a la comunidad Ba-Fit, donde podrás marcar tus actividades favoritas y de esta manera podemos personalizar la página a tus gustos particulares. También vas a poder agendar las actividades y sesiones en el calendario, facilitando tu organización diaria. También vas a poder optar por recibir mensajes vía e-mail, sms o Whatsapp con recordatorios sobre sesiones que hayas reservado</p>
           </div>
         </div>
         <div class="preyres">

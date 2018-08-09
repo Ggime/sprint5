@@ -114,7 +114,7 @@ telefono.addEventListener('blur', function(){
 		) {
 			this.submit()
 		} else {
-      	window.alert('Algun campo esta incorrecto');
+      	
     }
 	};
 

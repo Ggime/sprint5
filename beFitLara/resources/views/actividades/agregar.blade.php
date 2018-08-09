@@ -68,7 +68,7 @@
               <select id="barrio_id" name="barrio_id" class="form-control">
               <option value="">*Barrio</option>
               @foreach ($barrios as $barrio)
-                <option value="{{$barrio->id}}">{{$barrio->barrio}}</option>
+                <option value="{{$barrio->id}}" {{ (old('barrio_id')==$barrio->id)?'selected':'' }}>{{$barrio->barrio}}</option>
               @endforeach
               </select>
               <div class=""></div>
